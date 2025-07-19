@@ -1,0 +1,2718 @@
+[
+  {
+  "title": "Introduction to Angular",
+  "type": "Introduction",
+  "sections": [
+    {
+      "heading": "What is Angular?",
+      "content": "Angular is a popular open-source platform and framework developed by Google for building single-page client applications (SPAs) using HTML and TypeScript. It provides a comprehensive solution for developing dynamic, efficient, and scalable web applications."
+    },
+    {
+      "heading": "Key Aspects of Angular",
+      "subsections": [
+        {
+          "subheading": "1. Framework & Platform",
+          "content": "Angular provides a structured way to build web applications with components, services, directives, and modules. It offers tools like Angular CLI, Angular Universal, and Angular Material."
+        },
+        {
+          "subheading": "2. Single-Page Applications (SPAs)",
+          "content": "Angular is optimized for SPAs. It uses a Router to handle navigation without full page reloads."
+        },
+        {
+          "subheading": "3. TypeScript-Based",
+          "content": "Angular is built with TypeScript which offers static typing, tooling support, and improved code maintainability."
+        },
+        {
+          "subheading": "4. Component-Based Architecture",
+          "content": "Applications are built using reusable components."
+        },
+        {
+          "subheading": "Example",
+          "code": "@Component({\n  selector: 'app-root',\n  template: `<h1>Hello {{name}}!</h1>`,\n})\nexport class AppComponent {\n  name = 'Angular';\n}"
+        },
+        {
+          "subheading": "5. Key Features",
+          "content": "- Two-Way Data Binding\n- Dependency Injection (DI)\n- Directives (*ngIf, *ngFor)\n- Services & HTTP Client\n- RxJS for Reactive Programming"
+        },
+        {
+          "subheading": "6. Angular CLI",
+          "content": "Command line tool for creating projects (ng new), generating components, serving, and building the app."
+        },
+        {
+          "subheading": "7. Cross-Platform",
+          "content": "Supports PWAs, mobile apps, and desktop apps (Electron)."
+        }
+      ]
+    },
+    {
+      "heading": "Why Use Angular?",
+      "content":[
+        "i) Structured & Scalable",
+        "ii) Modular & Reusable",
+        "iii) Strong Tooling",
+        "iv) Performance Optimizations",
+        "v) Enterprise-Ready"
+      ]
+      
+    }
+  ]
+}
+,
+  {
+    "title": "Angular Installation",
+  "type": "Introduction",
+  "sections": [
+    {
+      "heading": "Prerequisites",
+      "content": [
+        "To use the Angular framework, you should be familiar with the following:",
+        "• JavaScript",
+        "• HTML",
+        "• CSS",
+        "• Knowledge of TypeScript.",
+        "To install Angular on your local system, you need the following:",
+        "i) Node.js",
+        "ii) npm package manager",
+        "iii) A code editor (VS Code recommended)"
+      ]
+    },
+    {
+      "heading": "Step 1: Install Node.js and npm",
+      "content": "Node.js and npm are required to install and run Angular CLI. You can download them from https://nodejs.org. Once installed, verify the versions using the following commands:",
+      "subsections": [
+        {
+          "subheading": "Check Node and npm versions",
+          "code": "node -v\nnpm -v"
+        }
+      ]
+    },
+    {
+      "heading": "Step 2: Install Angular CLI",
+      "content": "The Angular CLI (Command Line Interface) is the official tool for Angular development. Install it globally using npm or yarn."
+    },
+    {
+      "heading": "Install CLI using npm",
+      "subsections": [
+        {
+          "subheading": "Using npm",
+          "code": "npm install -g @angular/cli"
+        },
+        {
+          "subheading": "Using yarn (optional)",
+          "code": "yarn global add @angular/cli"
+        },
+        {
+          "subheading": "Verify Angular CLI installation",
+          "code": "ng version"
+        }
+      ]
+    },
+    {
+      "heading": "Step 3: Create a New Angular Project",
+      "content": "Use the following command to create a new Angular project using Angular CLI.",
+      "subsections": [
+        {
+          "subheading": "Create project",
+          "code": "ng new my-angular-app"
+        },
+        {
+          "subheading": "The CLI will ask you some configuration questions:",
+          "content": [
+            "• Would you like to add Angular routing? (Yes/No)",
+            "• Which stylesheet format would you like to use? (CSS, SCSS, Sass, Less, etc.)"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Step 4: Run the Application",
+      "subsections": [
+        {
+          "subheading": "Navigate to the project folder",
+          "code": "cd my-angular-app"
+        },
+        {
+          "subheading": "Start the development server",
+          "code": "ng serve"
+        },
+        {
+          "subheading": "Run with browser auto-opening",
+          "code": "ng serve --open"
+        },
+        {
+          "subheading": "App runs at",
+          "content": "http://localhost:4200/"
+        }
+      ]
+    },
+    {
+      "heading": "Alternative Installation Methods",
+      "subsections": [
+        {
+          "subheading": "Using npx (no global install)",
+          "code": "npx @angular/cli new my-angular-app"
+        }
+      ]
+    },
+    {
+      "heading": "Updating Angular CLI",
+      "subsections": [
+        {
+          "subheading": "Update command",
+          "code": "npm uninstall -g @angular/cli\nnpm cache clean --force\nnpm install -g @angular/cli@latest"
+        }
+      ]
+    },
+    {
+      "heading": "Project Structure Overview",
+      "subsections":[
+        {
+      "subheading": "After creating a new Angular project, your folder structure will look like this:",
+      "code": "my-angular-app/\n├── e2e/                  # End-to-end tests\n├── node_modules/         # All dependencies\n├── src/                  # Application source code\n│   ├── app/              # Your application components and modules\n│   ├── assets/           # Static assets\n│   ├── environments/     # Environment configurations\n│   ├── index.html        # Main HTML file\n│   ├── main.ts           # Application entry point\n│   └── styles.css        # Global styles\n├── .browserslistrc       # Browser compatibility config\n├── angular.json          # Angular CLI configuration\n├── package.json          # Project dependencies\n├── tsconfig.json         # TypeScript configuration\n└── tslint.json           # TypeScript linting rules"
+        }
+  ]},
+    {
+      "heading": "Common CLI Commands",
+      "subsections":[
+        {
+          "subheading":"Create new project",
+          "code":"ng new"
+        },
+        {
+           "subheading":"Generate new component",
+          "code":"ng generate component"
+        },
+        {
+          "subheading":"Generate new service",
+          "code":"ng generate service"
+        },
+        {
+          "subheading":"Generate new module",
+          "code":"ng generate module"
+        },
+        {
+           "subheading":"Run development server",
+          "code":"ng serve"
+        },{
+          "subheading":"Build project for production",
+          "code":"ng build"
+        },
+        {
+          "subheading":"Run unit tests",
+          "code":"ng test"
+        },
+        {
+          "subheading":"Update project dependencies",
+          "code":"ng update"
+        }
+      ]
+    }
+  ]
+  },
+ 
+{
+  "title": "Angular Architecture",
+  "type":"Introduction",
+  "sections": [
+    {
+      "heading": "Overview",
+      "content": "Angular uses a modular architecture that helps developers build scalable and maintainable applications. At the heart of Angular's architecture are components, services, and directives, which work together to build a structured UI and business logic separation."
+    },
+    {
+      "heading": "Now let's have a overview of Angular's Components,Services,Directives.Later in this course,we will go in depth with these concepts",
+      "subsections":[
+        {
+          "subheading":"Components",
+          "content":"Components are the building blocks of Angular applications. Each component controls a part of the UI and consists of a TypeScript class, an HTML template, and optional CSS styles. Components are declared in Angular modules and can be reused across the app.",
+          "code":"import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-greeting',\n  template: `<h1>Hello, Angular!</h1>`\n})\nexport class GreetingComponent { }"
+        },
+        {
+      "subheading": "Services",
+      "content": "Services are used to encapsulate business logic and reusable functionalities like API calls, data manipulation, or state management. They are typically injected into components using Angular's Dependency Injection (DI) system."
+        },
+        {
+          "subheading":"Simple Service Example",
+          "code":"import { Injectable } from '@angular/core';\n\n@Injectable({ providedIn: 'root' })\nexport class UserService {\n  getUser() {\n    return { name: 'Alice', age: 25 };\n  }\n}"
+        },
+        {
+          "subheading": "Using Service in Component",
+          "code": "import { Component, OnInit } from '@angular/core';\nimport { UserService } from './user.service';\n\n@Component({\n  selector: 'app-user',\n  template: `<p>{{ user?.name }}</p>`\n})\nexport class UserComponent implements OnInit {\n  user: any;\n  constructor(private userService: UserService) {}\n\n  ngOnInit() {\n    this.user = this.userService.getUser();\n  }\n}"
+        },
+        {
+          "subheading": "Directives",
+          "content": "Directives are classes that add behavior to elements in Angular applications. They can be structural (like *ngIf or *ngFor) or attribute-based (like changing styles or handling events). Developers can also create custom directives."
+     
+        },
+        {
+          "subheading":"Custom Directive Example",
+           "code": "import { Directive, ElementRef, Renderer2 } from '@angular/core';\n\n@Directive({\n  selector: '[appHighlight]'\n})\nexport class HighlightDirective {\n  constructor(el: ElementRef, renderer: Renderer2) {\n    renderer.setStyle(el.nativeElement, 'background-color', 'yellow');\n  }\n}"
+        },
+        {
+          "subheading": "Modular Approach",
+      "content": "Angular applications are structured into modules to promote reusability, separation of concerns, and lazy loading. Each module can group related components, directives, and services. The root module is typically `AppModule`, while feature modules encapsulate specific functionality."
+        },
+        {
+          "subheading": "Angular Module Example",
+         "code": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { AppComponent } from './app.component';\nimport { GreetingComponent } from './greeting.component';\n\n@NgModule({\n  declarations: [AppComponent, GreetingComponent],\n  imports: [BrowserModule],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }"
+        }
+      ]
+      
+    },
+    
+    {
+      "heading":"Key Points",
+       "content": [
+        "i) Components control the UI and have a class, template, and styles.",
+        "ii) Services handle business logic and are injected using Dependency Injection.",
+        "iii) Directives add dynamic behavior to the DOM.",
+        "iv) Modules help organize the app into cohesive blocks of functionality.",
+        "v) Angular promotes a scalable, maintainable architecture using these elements."
+      ]
+     
+    }
+  ]
+},
+  
+ {
+  "title": "Modules",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "Overview",
+      "content": "Angular modules (NgModules) help organize the application into cohesive blocks of functionality. Every Angular app has at least one root module called AppModule. Additional feature modules can be created to group related functionality and enable lazy loading or shared resources."
+    },
+    {
+      "heading": "Understanding Angular Modules",
+      "subsections": [
+        {
+          "subheading": "What are Angular Modules?",
+          "content": "Angular modules are containers for a cohesive block of code. A module can contain components, directives, pipes, and services. Modules allow developers to break applications into maintainable sections, support lazy loading, and share functionality across the app."
+        },
+        {
+          "subheading": "Basic Module Structure",
+          "content": "Every Angular module uses the `@NgModule` decorator. It defines metadata for declaring components, importing dependencies, and bootstrapping the app.",
+          "code": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }"
+        },
+        {
+          "subheading": "Types of Modules",
+          "content": "Angular supports different types of modules depending on their role in the application. Each module type serves a specific purpose to keep the codebase modular and maintainable."
+        },
+        {
+          "subheading": "Root Module",
+          "content": "This is the main module loaded at app startup, typically named AppModule.",
+          "code": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }"
+        },
+        {
+          "subheading": "Feature Module",
+          "content": "Used to organize related components, services, and routes. Promotes reusability and separation of concerns.",
+          "code": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ProductListComponent } from './product-list.component';\n\n@NgModule({\n  declarations: [ProductListComponent],\n  imports: [CommonModule]\n})\nexport class ProductModule { }"
+        },
+        {
+          "subheading": "Shared Module",
+          "content": "Used to declare and export common components, directives, or pipes that are reused across multiple modules.",
+          "code": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './button.component';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  exports: [ButtonComponent],\n  imports: [CommonModule]\n})\nexport class SharedModule { }"
+        },
+        {
+          "subheading": "Core Module",
+          "content": "Usually contains singleton services used throughout the app. Should only be imported once, in AppModule.",
+          "code": "import { NgModule } from '@angular/core';\nimport { AuthService } from './auth.service';\n\n@NgModule({\n  providers: [AuthService]\n})\nexport class CoreModule { }"
+        },
+        {
+          "subheading": "Module Metadata Properties",
+          "content": "The `@NgModule` decorator takes an object that defines how the module behaves. These are the most common metadata fields used inside modules."
+        },
+        {
+          "subheading": "1. declarations",
+          "content": "Specifies components, directives, and pipes that belong to the module. These elements are only visible to this module unless exported."
+        },
+        {
+          "subheading": "2. imports",
+          "content": "Other modules that are needed by this module. These modules' exported classes can be used in templates declared in this module."
+        },
+        {
+          "subheading": "3. providers",
+          "content": "Registers services that this module contributes to the global injector. If used in CoreModule, services become singletons across the app."
+        },
+        {
+          "subheading": "4. bootstrap",
+          "content": "Specifies the root component to bootstrap when this module is loaded. Typically used only in AppModule.",
+          "code": "@NgModule({\n  declarations: [...],\n  bootstrap: [AppComponent]\n})"
+        },
+        {
+          "subheading": "5. exports",
+          "content": "Exports components, directives, or pipes to make them available in other modules that import this one.",
+          "code": "@NgModule({\n  declarations: [ButtonComponent],\n  exports: [ButtonComponent]\n})"
+        },
+        {
+          "subheading": "Lazy Loading Modules",
+          "content": "Angular supports lazy loading, where feature modules are loaded only when needed (e.g., on route change). This improves initial loading time of the app.",
+          "code": "// In app-routing.module.ts\nconst routes: Routes = [\n  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) }\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }"
+        }
+      ]
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) Modules group related functionality into cohesive blocks.",
+        "ii) Angular requires at least one root module: AppModule.",
+        "iii) Feature modules enable reusability and lazy loading.",
+        "iv) Shared modules export common components used elsewhere.",
+        "v) Core modules provide singleton services across the app.",
+        "vi) @NgModule uses metadata: declarations, imports, providers, bootstrap, exports.",
+        "vii) Lazy loading improves performance by loading modules on demand."
+      ]
+    }
+  ]
+ },
+  {
+    "title": "Components",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "Overview",
+      "content": "In Angular, components are the foundational building blocks that control portions of the UI and manage application logic. Every Angular application is composed of a tree of components. Each component is responsible for a specific section of the user interface and is associated with a class, template, and optional styles."
+    },
+    {
+      "heading": "Understanding Components in Detail",
+      "subsections": [
+        {
+          "subheading": "What is a Component?",
+          "content": "A component in Angular consists of three main parts: a TypeScript class that contains data and logic, an HTML template that defines the view, and optional CSS styles to style the component's UI. Components are used to create a modular, reusable architecture for the application."
+        },
+        {
+          "subheading": "Creating a Component Using Angular CLI",
+          "content": "Angular CLI provides a command to generate a component with all boilerplate files (HTML, CSS, TS, spec).",
+          "code": "ng generate component user\n// or shorthand:\nng g c user"
+        },
+        {
+          "subheading": "Creating a Component Manually",
+          "content": "You can manually create a component by writing a class and decorating it with the `@Component` decorator.",
+          "code": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-manual',\n  template: `<h2>Manual Component</h2>`,\n  styles: [`h2 { color: purple; }`]\n})\nexport class ManualComponent {}"
+        },
+        {
+          "subheading": "Specifying a Component's CSS Selector",
+          "content": "The `selector` defines the custom HTML tag used to embed this component in other templates.",
+          "code": "@Component({\n  selector: 'app-header',\n  template: `<h1>App Header</h1>`\n})\nexport class HeaderComponent {}"
+        },
+        {
+          "subheading": "Defining a Component's Template",
+          "content": "The `template` property defines the component's HTML view. You can use inline template or external file using `templateUrl`.",
+          "code": "// Inline template:\n@Component({\n  selector: 'app-inline',\n  template: `<p>This is inline HTML</p>`\n})\nexport class InlineComponent {}\n\n// External template file:\n@Component({\n  selector: 'app-external',\n  templateUrl: './external.component.html'\n})"
+        },
+        {
+          "subheading": "Declaring a Component's Styles",
+          "content": "Component styles can be declared inline using `styles` or via external files using `styleUrls`. Angular scopes the styles to the component.",
+          "code": "// Inline styles:\n@Component({\n  selector: 'app-colored',\n  template: `<p>Styled paragraph</p>`,\n  styles: [`p { color: green; font-weight: bold; }`]\n})\nexport class ColoredComponent {}\n\n// External styles:\n@Component({\n  selector: 'app-styled',\n  templateUrl: './styled.component.html',\n  styleUrls: ['./styled.component.css']\n})"
+        },
+        {
+          "subheading": "Component Class",
+          "content": "The class defines the data and behavior of the component. It contains properties and methods that the template can bind to using Angular's data binding syntax.",
+          "code": "export class ProfileComponent {\n  username = 'rohit_saha';\n  getGreeting() {\n    return `Hello, ${this.username}`;\n  }\n}"
+        },
+        {
+          "subheading": "Component Template",
+          "content": "The template is the HTML markup associated with the component. It defines how the component is rendered in the browser. Templates can use Angular directives and binding syntax to display dynamic data.",
+          "code": "<div>\n  <p>Username: {{ username }}</p>\n  <button (click)=\"greet()\">Greet</button>\n</div>"
+        },
+        {
+          "subheading": "Component Styles",
+          "content": "Each component can have its own scoped styles defined using the `styles` or `styleUrls` property. Angular encapsulates styles by default using Shadow DOM or emulated encapsulation.",
+          "code": "styles: [`div { padding: 10px; background-color: #f1f1f1; }`] // part of @Component"
+        },
+        {
+          "subheading": "Component Hierarchy",
+          "content": "Components can be nested inside other components to form a component tree. The root component is typically `AppComponent`, and child components can be rendered inside it using their selector tags.",
+          "code": "<app-navbar></app-navbar>\n<router-outlet></router-outlet>\n<app-footer></app-footer>"
+        },
+        {
+          "subheading": "Component Metadata",
+          "content": "The metadata is defined using the `@Component` decorator, which tells Angular how to instantiate and use the component. It includes selector, template, styles, and other configurations.",
+          "code": "@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})"
+        }
+      ]
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) Components control the UI and encapsulate data and behavior.",
+        "ii) Each component has a class, template, and styles.",
+        "iii) Angular CLI generates components quickly using `ng g c`.",
+        "iv) You can manually create components using `@Component`.",
+        "v) Component templates define HTML; styles define appearance.",
+        "vi) Selectors allow embedding one component inside another.",
+        "vii) Angular encourages component-based architecture for reuse and modularity."
+      ]
+    }
+  ]
+  },
+  {
+  "title": "Lifecycle Hooks",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "Overview",
+      "content": "Angular lifecycle hooks are special methods that allow developers to act at specific moments in a component's or directive's lifecycle — from creation to destruction. These hooks give fine-grained control over behavior at each stage, like initialization, change detection, rendering, and cleanup."
+    },
+    {
+      "heading": "Angular Component Lifecycle Hooks",
+      "subsections": [
+        {
+          "subheading": "ngOnChanges",
+          "content": "Triggered when an @Input property changes. Useful for reacting to parent data changes.",
+          "code": "import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\n\n@Component({\n  selector: 'app-child',\n  template: `<p>Value: {{ data }}</p>`\n})\nexport class ChildComponent implements OnChanges {\n  @Input() data: string = '';\n\n  ngOnChanges(changes: SimpleChanges) {\n    console.log('Input changes:', changes);\n  }\n}"
+        },
+        {
+          "subheading": "ngOnInit",
+          "content": "Called once after the first ngOnChanges. Used for initial logic like fetching data or initializing variables.",
+          "code": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-user',\n  template: `<p>{{ name }}</p>`\n})\nexport class UserComponent implements OnInit {\n  name = '';\n\n  ngOnInit() {\n    this.name = 'Angular Learner';\n  }\n}"
+        },
+        {
+          "subheading": "ngDoCheck",
+          "content": "Called during every change detection cycle. Use when Angular's default detection misses changes.",
+          "code": "import { Component, DoCheck } from '@angular/core';\n\n@Component({\n  selector: 'app-check',\n  template: `<p>{{ count }}</p>`\n})\nexport class CheckComponent implements DoCheck {\n  count = 0;\n\n  ngDoCheck() {\n    console.log('DoCheck called');\n  }\n}"
+        },
+        {
+          "subheading": "ngAfterContentInit",
+          "content": "Runs once after content (like ng-content) is projected into the component.",
+          "code": "import { Component, AfterContentInit, ContentChild, ElementRef } from '@angular/core';\n\n@Component({\n  selector: 'app-wrapper',\n  template: `<ng-content></ng-content>`\n})\nexport class WrapperComponent implements AfterContentInit {\n  @ContentChild('projected') projectedContent!: ElementRef;\n\n  ngAfterContentInit() {\n    console.log('Projected content:', this.projectedContent.nativeElement.textContent);\n  }\n}"
+        },
+        {
+          "subheading": "ngAfterContentChecked",
+          "content": "Called after each check of projected content. Useful for reacting to updates inside ng-content.",
+          "code": "import { Component, AfterContentChecked } from '@angular/core';\n\n@Component({\n  selector: 'app-content-check',\n  template: `<ng-content></ng-content>`\n})\nexport class ContentCheckComponent implements AfterContentChecked {\n  ngAfterContentChecked() {\n    console.log('Content checked');\n  }\n}"
+        },
+        {
+          "subheading": "ngAfterViewInit",
+          "content": "Called once after the component’s view and its children’s views are initialized. Useful for DOM access.",
+          "code": "import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';\n\n@Component({\n  selector: 'app-view-init',\n  template: `<div #box>Hello</div>`\n})\nexport class ViewInitComponent implements AfterViewInit {\n  @ViewChild('box') box!: ElementRef;\n\n  ngAfterViewInit() {\n    console.log('View initialized:', this.box.nativeElement);\n  }\n}"
+        },
+        {
+          "subheading": "ngAfterViewChecked",
+          "content": "Called after every check of the component’s view and child views. Used for custom DOM operations.",
+          "code": "import { Component, AfterViewChecked } from '@angular/core';\n\n@Component({\n  selector: 'app-view-check',\n  template: `<p>Checking view...</p>`\n})\nexport class ViewCheckComponent implements AfterViewChecked {\n  ngAfterViewChecked() {\n    console.log('View checked');\n  }\n}"
+        },
+        {
+          "subheading": "ngOnDestroy",
+          "content": "Called right before Angular destroys the component. Ideal for cleanup like unsubscribing observables or clearing intervals.",
+          "code": "import { Component, OnDestroy } from '@angular/core';\nimport { interval, Subscription } from 'rxjs';\n\n@Component({\n  selector: 'app-timer',\n  template: `<p>Timer running</p>`\n})\nexport class TimerComponent implements OnDestroy {\n  subscription: Subscription;\n\n  constructor() {\n    this.subscription = interval(1000).subscribe(console.log);\n  }\n\n  ngOnDestroy() {\n    this.subscription.unsubscribe();\n    console.log('Component destroyed and unsubscribed');\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Key Takeaways",
+      "content": [
+        "i) ngOnInit is used for initialization logic like API calls.",
+        "ii) ngOnDestroy is used for cleanup, such as unsubscribing observables.",
+        "iii) ngOnChanges is used to react to @Input property changes.",
+        "iv) ngDoCheck allows custom change detection logic.",
+        "v) ngAfterContentInit/Checked are for projected content checks.",
+        "vi) ngAfterViewInit/Checked are for handling view DOM after it's initialized.",
+        "vii) Use lifecycle hooks wisely to avoid memory leaks and improve performance."
+      ]
+    }
+  ]
+},
+{
+  "title": "Component Communication",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "Overview",
+      "content": "Component communication in Angular refers to how data and events are passed between components. Angular provides multiple ways to allow components to interact depending on their relationship (parent-child or unrelated).Inputs and Outputs for data flow between parent and child, @ViewChild and @ViewChildren for accessing elements or components within a component's template, and @ContentChild and @ContentChildren for accessing projected content. These decorators allow for flexible and efficient component interaction. "
+    },
+    {
+      "heading": "Parent-to-Child Communication (@Input)",
+      "subsections": [
+        {
+          "subheading": "Using @Input to Pass Data",
+          "content": "You can pass data from a parent component to a child component using the @Input() decorator. This helps you make your child components reusable and configurable.",
+          "code": "// child.component.ts\nimport { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-child',\n  template: `<h3>Welcome, {{ user.name }}!</h3><p>Age: {{ user.age }}</p>`\n})\nexport class ChildComponent {\n  @Input() user!: { name: string; age: number };\n}"
+        },
+        {
+          "subheading": "Parent Component",
+          "code": "// parent.component.ts\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-parent',\n  template: `<app-child [user]=\"userInfo\"></app-child>`\n})\nexport class ParentComponent {\n  userInfo = { name: 'Alice', age: 25 };\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Child-to-Parent Communication (@Output + EventEmitter)",
+      "subsections": [
+        {
+          "subheading": "Child Component Emits Event",
+          "content": "@Output() with EventEmitter allows a child component to notify the parent when an event occurs (e.g., button clicked).",
+          "code": "// child.component.ts\nimport { Component, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'app-child',\n  template: `<button (click)=\"sendMessage()\">Send Message</button>`\n})\nexport class ChildComponent {\n  @Output() messageEvent = new EventEmitter<string>();\n\n  sendMessage() {\n    this.messageEvent.emit('Hello from child!');\n  }\n}"
+        },
+        {
+          "subheading": "Parent Receives Event",
+          "code": "// parent.component.ts\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-parent',\n  template: `<app-child (messageEvent)=\"handleMessage($event)\"></app-child>\n             <p>Message: {{ message }}</p>`\n})\nexport class ParentComponent {\n  message = '';\n\n  handleMessage(msg: string) {\n    this.message = msg;\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Accessing Child Components (@ViewChild / @ViewChildren)",
+      "subsections": [
+        {
+          "subheading": "Using @ViewChild",
+          "content": "This gives direct access to a child component’s methods or properties. Useful for triggering child behavior from the parent.",
+          "code": "// child.component.ts\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-child',\n  template: `<p>Counter: {{ count }}</p>`\n})\nexport class ChildComponent {\n  count = 0;\n\n  increment() {\n    this.count++;\n  }\n}"
+        },
+        {
+          "subheading": "Parent Component Accesses Child",
+          "code": "// parent.component.ts\nimport { Component, ViewChild } from '@angular/core';\nimport { ChildComponent } from './child.component';\n\n@Component({\n  selector: 'app-parent',\n  template: `<button (click)=\"increase()\">Increase</button>\n             <app-child></app-child>`\n})\nexport class ParentComponent {\n  @ViewChild(ChildComponent) child!: ChildComponent;\n\n  increase() {\n    this.child.increment();\n  }\n}"
+        },
+        {
+          "subheading": "Using @ViewChildren",
+          "content": "You can access multiple children using @ViewChildren and loop over them or apply logic collectively.",
+          "code": "// parent.component.ts\nimport { Component, QueryList, ViewChildren, AfterViewInit } from '@angular/core';\nimport { ChildComponent } from './child.component';\n\n@Component({\n  selector: 'app-parent',\n  template: `<app-child *ngFor=\"let c of 3\"></app-child>\n             <button (click)=\"resetAll()\">Reset All</button>`\n})\nexport class ParentComponent implements AfterViewInit {\n  @ViewChildren(ChildComponent) children!: QueryList<ChildComponent>;\n\n  ngAfterViewInit() {\n    console.log(this.children);\n  }\n\n  resetAll() {\n    this.children.forEach(child => child.count = 0);\n  }\n}"
+        },
+        {"subheading":"Lifecycle",
+         "content":"@ViewChild and @ViewChildren are typically used within the ngAfterViewInit lifecycle hook to ensure the child elements have been rendered. "      
+       }
+      ]
+    },
+    {
+      "heading": "Content Projection (@ContentChild / @ContentChildren)",
+      "subsections": [
+        {
+          "subheading": "Using @ContentChild",
+          "content": "@ContentChild accesses projected content passed inside <ng-content>. Lifecycle hook `ngAfterContentInit` is required.",
+          "code": "// projected.component.ts\nimport { Component, ContentChild, AfterContentInit, ElementRef } from '@angular/core';\n\n@Component({\n  selector: 'app-wrapper',\n  template: `<ng-content></ng-content>`\n})\nexport class WrapperComponent implements AfterContentInit {\n  @ContentChild('projected') projectedContent!: ElementRef;\n\n  ngAfterContentInit() {\n    this.projectedContent.nativeElement.style.color = 'blue';\n  }\n}"
+        },
+        {
+          "subheading": "Parent Projects Content",
+          "code": "// parent.component.html\n<app-wrapper>\n  <p #projected>This will be styled by child</p>\n</app-wrapper>"
+        },
+        {
+          "subheading":"Lifecycle",
+          "content":"@ContentChild and @ContentChildren are typically used within the ngAfterContentInit lifecycle hook. "
+        }
+      ]
+    },
+    {
+      "heading": "Communication via Shared Service",
+      "subsections": [
+        {
+          "subheading": "Shared Service for State",
+          "content": "Services are used when components don’t share a parent-child relationship. This allows global or cross-component communication.",
+          "code": "// message.service.ts\nimport { Injectable } from '@angular/core';\nimport { BehaviorSubject } from 'rxjs';\n\n@Injectable({ providedIn: 'root' })\nexport class MessageService {\n  private msgSource = new BehaviorSubject<string>('');\n  currentMessage = this.msgSource.asObservable();\n\n  updateMessage(msg: string) {\n    this.msgSource.next(msg);\n  }\n}"
+        },
+        {
+          "subheading": "Sender Component",
+          "code": "// sender.component.ts\nimport { Component } from '@angular/core';\nimport { MessageService } from './message.service';\n\n@Component({\n  selector: 'app-sender',\n  template: `<button (click)=\"send()\">Send Message</button>`\n})\nexport class SenderComponent {\n  constructor(private msgService: MessageService) {}\n\n  send() {\n    this.msgService.updateMessage('Update from Sender');\n  }\n}"
+        },
+        {
+          "subheading": "Receiver Component",
+          "code": "// receiver.component.ts\nimport { Component, OnInit } from '@angular/core';\nimport { MessageService } from './message.service';\n\n@Component({\n  selector: 'app-receiver',\n  template: `<p>Received: {{ message }}</p>`\n})\nexport class ReceiverComponent implements OnInit {\n  message = '';\n\n  constructor(private msgService: MessageService) {}\n\n  ngOnInit() {\n    this.msgService.currentMessage.subscribe(msg => this.message = msg);\n  }\n}"
+        }
+      ]
+    },
+    
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) Use @Input when the parent needs to pass data to a child.",
+        "ii) Use @Output to notify the parent about child events.",
+        "iii) @ViewChild is helpful to access child methods and DOM elements.",
+        "iv) @ContentChild is used when projecting content from parent to child.",
+        "v) Services are ideal for communication between unrelated components.",
+        "vi) @ContentChild/@ContentChildren must be used inside ngAfterContentInit."
+      ]
+    }
+  ]
+},
+
+  {
+  "title": "Content Projection",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "What is Content Projection?",
+      "content": "Content Projection is a pattern in Angular that allows you to insert external or user-provided content into a component's template. It enables a component to act as a container for dynamic or reusable content, making it more flexible and customizable."
+    },
+    {
+      "heading": "How Does ng-content Work?",
+      "content": "Angular uses the <ng-content> directive as a placeholder where external content is inserted. During compilation, Angular projects the content passed between the component tags into the ng-content area."
+    },
+    {
+      "heading": "Why Use Content Projection?",
+      "content": [
+        "i) Reusability – create wrapper components that render custom content.",
+        "ii) Clean separation of structure and dynamic content.",
+        "iii) Flexibility for library or design system components."
+      ]
+    },
+    {
+      "heading": "Basic Usage",
+      "subsections": [
+        {
+          "subheading": "Child Component",
+          "code": "@Component({\n  selector: 'app-card',\n  template: `\n    <div class=\"card\">\n      <ng-content></ng-content>\n    </div>\n  `\n})\nexport class CardComponent {}"
+        },
+        {
+          "subheading": "Parent Component",
+          "code": "<app-card>\n  <h2>Projected Title</h2>\n  <p>This content is passed from parent.</p>\n</app-card>"
+        }
+      ]
+    },
+    {
+      "heading": "Features of Content Projection",
+      "subsections": [
+        {
+          "subheading": "Single Projection",
+          "content": "Projects all content into a single <ng-content> slot.",
+          "code": "@Component({\n  selector: 'app-box',\n  template: `<div class=\"box\"><ng-content></ng-content></div>`\n})\nexport class BoxComponent {}"
+        },
+        {
+          "subheading": "Parent with Projected Content",
+          "code": "<app-box>\n  <p>This is inside the box</p>\n</app-box>"
+        },
+        {
+          "subheading": "Single Slot with Button Example",
+          "code": "@Component({\n  selector: 'app-button-wrapper',\n  template: `<ng-content></ng-content>`\n})\nexport class ButtonWrapperComponent {}"
+        },
+        {
+          "subheading": "Parent with Button",
+          "code": "<app-button-wrapper>\n  <button (click)=\"alert('Clicked!')\">Click Me</button>\n</app-button-wrapper>"
+        },
+        {
+          "subheading": "Multiple Projection Slots",
+          "content": "Using select attributes to define specific projection areas for different types of content.",
+          "code": "@Component({\n  selector: 'app-layout',\n  template: `\n    <header><ng-content select=\"header\"></ng-content></header>\n    <main><ng-content select=\"main\"></ng-content></main>\n    <footer><ng-content select=\"footer\"></ng-content></footer>\n  `\n})\nexport class LayoutComponent {}"
+        },
+        {
+          "subheading": "Parent with Named Slots",
+          "code": "<app-layout>\n  <header>Header Content</header>\n  <main>Main Content Area</main>\n  <footer>Footer Info</footer>\n</app-layout>"
+        },
+        {
+          "subheading": "Default Content Fallback",
+          "content": "Content shown if no content is projected.",
+          "code": "@Component({\n  selector: 'app-note',\n  template: `\n    <ng-content></ng-content>\n    <p *ngIf=\"!hasContent\">This is default content</p>\n  `\n})\nexport class NoteComponent {\n  hasContent = false;\n}"
+        },
+        {
+          "subheading": "Parent without Projected Content",
+          "code": "<app-note></app-note>"
+        },
+        {
+          "subheading": "Accessing Projected Content Programmatically",
+          "content": "You can access projected DOM elements or components using @ContentChild or @ContentChildren. These are typically used inside ngAfterContentInit.",
+          "code": "@Component({\n  selector: 'app-wrapper',\n  template: `<ng-content></ng-content>`\n})\nexport class WrapperComponent implements AfterContentInit {\n  @ContentChild('projectedRef') element: ElementRef;\n\n  ngAfterContentInit() {\n    console.log(this.element.nativeElement.textContent);\n  }\n}"
+        },
+        {
+          "subheading": "Parent with Template Ref",
+          "code": "<app-wrapper>\n  <p #projectedRef>Hello from parent</p>\n</app-wrapper>"
+        },
+        {
+          "subheading": "Conditional Projection",
+          "content": "Using *ngIf or input bindings to control which content gets projected.",
+          "code": "@Component({\n  selector: 'app-message',\n  template: `\n    <div *ngIf=\"show\">\n      <ng-content></ng-content>\n    </div>\n  `\n})\nexport class MessageComponent {\n  @Input() show = true;\n}"
+        },
+        {
+          "subheading": "Parent Using Conditional Slot",
+          "code": "<app-message [show]=\"false\">\n  <p>This won't be shown unless show = true</p>\n</app-message>"
+        }
+      ]
+    },
+    {
+      "heading": "Example: Tab Component",
+      "subsections": [
+        {
+          "subheading": "Child Component: TabContainer",
+          "code": "@Component({\n  selector: 'app-tab-container',\n  template: `\n    <div class=\"tab-buttons\">\n      <button *ngFor=\"let tab of tabs\" (click)=\"selectTab(tab)\">\n        {{ tab.title }}\n      </button>\n    </div>\n    <ng-content></ng-content>\n  `\n})\nexport class TabContainerComponent implements AfterContentInit {\n  @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;\n\n  ngAfterContentInit() {\n    const activeTab = this.tabs.find(t => t.active);\n    if (!activeTab && this.tabs.length) {\n      this.selectTab(this.tabs.first);\n    }\n  }\n\n  selectTab(tab: TabComponent) {\n    this.tabs.forEach(t => t.active = false);\n    tab.active = true;\n  }\n}"
+        },
+        {
+          "subheading": "Parent Usage",
+          "code": "<app-tab-container>\n  <app-tab title=\"First\" [active]=\"true\">Content 1</app-tab>\n  <app-tab title=\"Second\">Content 2</app-tab>\n</app-tab-container>"
+        }
+      ]
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) Content projection enables dynamic, reusable UI components.",
+        "ii) Use <ng-content> for single or multiple content slots.",
+        "iii) Use @ContentChild and @ContentChildren to access projected content programmatically.",
+        "iv) ngAfterContentInit is the right lifecycle hook to handle projected content.",
+        "v) Supports default fallback content and conditional rendering.",
+        "vi) Enhances component flexibility, especially in design systems."
+      ]
+    }
+   
+  ]
+},
+{
+  "title": "Templates",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "What Are Templates?",
+      "content": "Templates in Angular define the HTML structure of a component’s view. They combine standard HTML with Angular’s template syntax including bindings, directives, and expressions. Templates determine how data is rendered and interactively updated in the UI."
+    },
+    {
+      "heading": "Types of Templates",
+      "subsections": [
+        {
+          "subheading": "Inline Template",
+          "content": "Defined directly inside the component using the `template` property.",
+          "code": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-inline-example',\n  template: `<h2>Hello from Inline Template</h2>`\n})\nexport class InlineExampleComponent { }"
+        },
+        {
+          "subheading": "External Template",
+          "content": "Defined in a separate HTML file and referenced using the `templateUrl` property.",
+          "code": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-external-example',\n  templateUrl: './external-example.component.html'\n})\nexport class ExternalExampleComponent { }"
+        },
+        {
+          "subheading": "external-example.component.html",
+          "content": "HTML content for external template.",
+          "code": "<h2>Hello from External Template</h2>"
+        }
+      ]
+    },
+    {
+      "heading": "How Angular Templates Work",
+      "content": "Templates blend standard HTML with Angular-specific syntax including directives, bindings, and pipes to create dynamic UIs."
+    },
+    {
+      "heading": "Basic Example",
+      "subsections": [
+        {
+          "subheading": "Basic Template Example",
+          "content": "Demonstrates interpolation, event binding, and property binding.",
+          "code": "<!-- Component Template -->\n<h1>{{ title }}</h1>\n<button (click)=\"onClick()\">Save</button>\n<p [class.active]=\"isActive\">Status</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Template Bindings",
+      "subsections": [
+        {
+          "subheading": "A. Interpolation ({{ }})",
+          "content": "Interpolation allows embedding expressions in the template to dynamically display component values.",
+          "code": "<p>Hello, {{ username }}!</p>"
+        },
+        {
+          "subheading": "B. Property Binding [ ]",
+          "content": "Binds a DOM property to a component property. Used for setting values dynamically.",
+          "code": "<img [src]=\"profileImageUrl\">"
+        },
+        {
+          "subheading": "C. Event Binding ( )",
+          "content": "Listens to user events and executes corresponding methods in the component.",
+          "code": "<button (click)=\"submitForm()\">Submit</button>"
+        },
+        {
+          "subheading": "D. Two-Way Binding [( )]",
+          "content": "Binds component property and template input together using `ngModel`.",
+          "code": "<input [(ngModel)]=\"userName\">"
+        }
+      ]
+    },
+    {
+      "heading": "Note",
+      "content": "We’ll explore Data Binding, Interpolation, Property & Event Binding, and Two-Way Binding in depth in separate topics later."
+    },
+    {
+      "heading": "Built-in Directives",
+      "subsections": [
+        {
+          "subheading": "Built-in Directive Examples",
+          "content": "Examples of structural and attribute directives provided by Angular.",
+          "code": "<div *ngIf=\"isVisible\">Now you see me!</div>\n<div [ngClass]=\"{ active: isActive }\">Style me!</div>"
+        }
+      ]
+    },
+    {
+      "heading": "Template Variables",
+      "subsections": [
+        {
+          "subheading": "Accessing DOM Elements",
+          "content": "Template variable allows access to DOM input field in component.",
+          "code": "<input #userInput type=\"text\">\n<button (click)=\"log(userInput.value)\">Log Input</button>"
+        }
+      ]
+    },
+    {
+      "heading": "Advanced Template Features",
+      "subsections": [
+        {
+          "subheading": "A. ng-template",
+          "content": "Defines a block of HTML that can be conditionally rendered or reused.",
+          "code": "<ng-template #loading>\n  <p>Loading...</p>\n</ng-template>\n\n<div *ngIf=\"isLoading; else loading\">Content loaded</div>"
+        },
+        {
+          "subheading": "B. ng-container",
+          "content": "`ng-container` groups elements without adding extra DOM nodes. Useful for structural directives.",
+          "code": "<ng-container *ngIf=\"isLoggedIn\">\n  <p>Welcome, {{ user.name }}</p>\n</ng-container>"
+        },
+        {
+          "subheading": "C. ng-content (Content Projection)",
+          "content": "Allows inserting external content into a component’s template.",
+          "code": "<ng-content></ng-content>"
+        }
+      ]
+    },
+    {
+      "heading": "Real-World Example: User Card Template",
+      "subsections": [
+        {
+          "subheading": "User Card",
+          "content": "A complete user card template with bindings and event handling.",
+          "code": "<div class=\"user-card\">\n  <img [src]=\"user.photo\" alt=\"User Photo\">\n  <h2>{{ user.name }}</h2>\n  <p>Email: {{ user.email }}</p>\n  <button (click)=\"editUser()\">Edit</button>\n</div>"
+        }
+      ]
+    },
+    {
+      "heading": "Key Takeaways",
+      "content": [
+        "i) Angular templates define UI using HTML with bindings and directives.",
+        "ii) Templates can be written inline or in external files.",
+        "iii) Use ng-template and ng-container for advanced structural control.",
+        "iv) Template bindings enable dynamic data and event interaction.",
+        "v) Content projection allows external content to be inserted into components."
+      ]
+    }
+  ]
+}
+,
+{
+  "title": "Data Binding",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "What is Data Binding?",
+      "content": "Data Binding in Angular is the mechanism that connects the component logic and the view (template). It enables the synchronization of data between the model (component class) and the UI (template). This ensures that when the data changes, the view reflects the change and vice versa."
+    },
+    {
+      "heading": "Types of Data Binding",
+      "subsections": [
+        {
+          "subheading": "1. Interpolation ({{ }})",
+          "content": "Interpolation allows you to embed expressions into your HTML template to display dynamic values.",
+          "code": "<h1>Welcome, {{ userName }}!</h1>\n<p>2 + 2 = {{ 2 + 2 }}</p>"
+        },
+        {
+          "subheading": "2. Property Binding ([property])",
+          "content": "Property binding sets the value of an HTML element property from the component.",
+          "code": "<img [src]=\"user.profileImage\">\n<button [disabled]=\"isDisabled\">Submit</button>"
+        },
+        {
+          "subheading": "3. Event Binding ((event))",
+          "content": "Event binding allows you to respond to DOM events like clicks, input, etc.",
+          "code": "<button (click)=\"handleClick()\">Click Me</button>\n<input (input)=\"onInputChange($event)\">"
+        },
+        {
+          "subheading": "4. One-way Binding using Bind Syntax",
+          "content": "You can also use the bind- prefix as an alternative syntax.",
+          "code": "<button bind-disabled=\"isDisabled\">Submit</button>\n<img bind-src=\"imageUrl\">"
+        },
+        {
+          "subheading": "5. Two-Way Binding ([(ngModel)])",
+          "content": "Two-way binding synchronizes data in both directions: view to component and component to view. It requires importing FormsModule.",
+          "code": "<input [(ngModel)]=\"username\">\n<p>Hello, {{ username }}</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Advanced Binding Techniques",
+      "subsections": [
+        {
+          "subheading": "A. Template Reference Variables",
+          "content": "Used to reference DOM elements or directives from the template.",
+          "code": "<input #emailInput>\n<button (click)=\"sendEmail(emailInput.value)\">Send</button>"
+        },
+        {
+          "subheading": "B. $event Object",
+          "content": "$event carries event details in event bindings.",
+          "code": "<input (input)=\"logInput($event)\">\n<!-- In TS -->\nlogInput(event: Event) {\n  console.log((<HTMLInputElement>event.target).value);\n}"
+        },
+        {
+          "subheading": "C. Safe Navigation Operator (?.)",
+          "content": "Used when you want to access properties of an object that may be null or undefined.",
+          "code": "<p>{{ user?.address?.city }}</p>"
+        },
+        {
+          "subheading": "D. Non-Null Assertion Operator (!)",
+          "content": "Used to tell Angular that a variable will never be null/undefined (used when you're certain).",
+          "code": "<p>{{ user!.name }}</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Change Detection & Performance",
+      "subsections": [
+        {
+          "subheading": "A. Change Detection Strategies",
+          "content": "Angular uses change detection to track changes in data and update the view. Two strategies:\n\n- Default: Checks every binding\n- OnPush: Checks only when input changes or event occurs in the component",
+          "code": "@Component({\n  selector: 'my-comp',\n  changeDetection: ChangeDetectionStrategy.OnPush\n})"
+        },
+        {
+          "subheading": "B. trackBy with *ngFor",
+          "content": "trackBy improves performance by reusing DOM elements. It prevents DOM from recreating unchanged elements.",
+          "code": "<li *ngFor=\"let item of items; trackBy: trackById\">{{ item.name }}</li>\n\ntrackById(index: number, item: any) {\n  return item.id;\n}"
+        }
+      ]
+    },
+    
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) Data binding connects the component and template in Angular.",
+        "ii) One-way binding flows from component to view (or view to component in events).",
+        "iii) Two-way binding syncs data in both directions using [(ngModel)].",
+        "iv) Use template reference variables to read values without binding.",
+        "v) $event helps in accessing native event data.",
+        "vi) Safe navigation (?.) and non-null (!) are useful in complex objects.",
+        "vii) OnPush strategy and trackBy improve performance during DOM updates."
+      ]
+    }
+  ]
+},
+{
+  "title": "Directives",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "What are Directives?",
+      "content": "Directives are Angular's way of extending HTML with custom behavior. They are classes with decorators that can modify the structure, style, or behavior of DOM elements."
+    },
+    {
+      "heading": "Types of Directives",
+      "content": [
+        "i) Structural Directives – Change the DOM layout (e.g., *ngIf, *ngFor, *ngSwitch).",
+        "ii) Attribute Directives – Change the appearance or behavior of elements (e.g., ngClass, ngStyle).",
+        "iii) Custom Directives – User-defined structural or attribute directives to encapsulate reusable logic."
+      ]
+    },
+    {
+      "heading": "Built-in Directives",
+      "subsections": [
+        {
+          "subheading": "1. *ngIf",
+          "content": "Conditionally includes or removes an element from the DOM.",
+          "code": "// Example 1\n<p *ngIf=\"isLoggedIn\">Welcome, User!</p>\n\n// Example 2 (with else)\n<div *ngIf=\"user; else guest\">\n  Welcome, {{ user.name }}\n</div>\n<ng-template #guest>\n  Please login\n</ng-template>"
+        },
+        {
+          "subheading": "2. *ngFor",
+          "content": "Repeats an element for each item in a list.",
+          "code": "// Example 1\n<li *ngFor=\"let item of items\">{{ item }}</li>\n\n// Example 2 (with index)\n<li *ngFor=\"let item of items; let i = index\">{{ i + 1 }}. {{ item }}</li>"
+        },
+        {
+          "subheading": "3. *ngSwitch",
+          "content": "Displays elements based on a matching condition.",
+          "code": "// Example 1\n<div [ngSwitch]=\"role\">\n  <p *ngSwitchCase=\"'admin'\">Admin Panel</p>\n  <p *ngSwitchCase=\"'user'\">User Dashboard</p>\n  <p *ngSwitchDefault>Unknown Role</p>\n</div>\n\n// Example 2\n<ng-container [ngSwitch]=\"status\">\n  <div *ngSwitchCase=\"'loading'\">Loading...</div>\n  <div *ngSwitchCase=\"'loaded'\">Data Ready</div>\n</ng-container>"
+        },
+        {
+          "subheading": "4. ngClass",
+          "content": "Dynamically add or remove classes.",
+          "code": "// Example 1\n<p [ngClass]=\"{ 'active': isActive, 'disabled': !isActive }\">Status</p>\n\n// Example 2\n<p [ngClass]=\"statusClass\">Dynamic Class</p>"
+        },
+        {
+          "subheading": "5. ngStyle",
+          "content": "Dynamically set styles on an element.",
+          "code": "// Example 1\n<p [ngStyle]=\"{ 'color': isActive ? 'green' : 'gray' }\">Status</p>\n\n// Example 2\n<div [ngStyle]=\"customStyle\">Styled Box</div>"
+        }
+      ]
+    },
+    {
+      "heading": "Custom Directives",
+      "subsections": [
+        {
+          "subheading": "Attribute Directive Example - Hover Highlight",
+          "content": "Highlights the background color of an element on hover.",
+          "code": "// highlight.directive.ts\n@Directive({ selector: '[appHighlight]' })\nexport class HighlightDirective {\n  constructor(private el: ElementRef, private renderer: Renderer2) {\n    this.renderer.listen(this.el.nativeElement, 'mouseenter', () => {\n      this.renderer.setStyle(this.el.nativeElement, 'background', 'yellow');\n    });\n    this.renderer.listen(this.el.nativeElement, 'mouseleave', () => {\n      this.renderer.removeStyle(this.el.nativeElement, 'background');\n    });\n  }\n}"
+        },
+        {
+          "subheading": "Structural Directive Example - *appUnless",
+          "content": "Displays the element only when the condition is false (opposite of *ngIf).",
+          "code": "// unless.directive.ts\n@Directive({ selector: '[appUnless]' })\nexport class UnlessDirective {\n  constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef) {}\n\n  @Input() set appUnless(condition: boolean) {\n    if (!condition) {\n      this.viewContainer.createEmbeddedView(this.templateRef);\n    } else {\n      this.viewContainer.clear();\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Directive Deep Dive",
+      "subsections": [
+        {
+          "subheading": "A. Host Binding & Listening",
+          "content": "Bind properties and listen to events on the host element.",
+          "code": "@Directive({ selector: '[appResize]' })\nexport class ResizeDirective {\n  @HostBinding('style.fontSize') fontSize = '16px';\n  @HostListener('mouseenter') enlarge() { this.fontSize = '20px'; }\n  @HostListener('mouseleave') shrink() { this.fontSize = '16px'; }\n}"
+        },
+        {
+          "subheading": "B. Dependency Injection in Directives",
+          "content": "Directives can inject services to perform logic or interact with global state.",
+          "code": "// log-click.directive.ts\n@Directive({ selector: '[appLogClick]' })\nexport class LogClickDirective {\n  constructor(private logger: LoggerService, private el: ElementRef) {\n    el.nativeElement.addEventListener('click', () => {\n      this.logger.log('Element clicked!');\n    });\n  }\n}"
+        },
+        {
+          "subheading": "C. Directive Composition API (Angular v15+)",
+          "content": "Combine multiple directives on one host element cleanly and efficiently.",
+          "code": "// shared.directive.ts\n@Directive({ selector: '[appCombined]' })\n@DirectiveComposition([{ directive: HoverDirective }, { directive: LogClickDirective }])\nexport class CombinedDirective {}"
+        }
+      ]
+    },
+    {
+      "heading": "Performance Considerations",
+      "subsections": [
+        {
+          "subheading": "Structural Directives",
+          "content": [
+            "Use `trackBy` with *ngFor to improve rendering performance.",
+            "Avoid heavy logic inside `*ngIf` conditions."
+          ]
+        },
+        {
+          "subheading": "Attribute Directives",
+          "content": [
+            "Minimize DOM manipulation in event handlers.",
+            "Use `ngZone.runOutsideAngular()` for heavy or non-Angular dependent operations."
+          ]
+        },
+        {
+          "subheading": "Change Detection",
+          "content": [
+            "Use `ChangeDetectionStrategy.OnPush` when possible for better performance.",
+            "Use `ChangeDetectorRef.detach()` and `reattach()` to control detection manually."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Complete Example",
+      "subsections": [
+        {
+  "subheading": "Highlight Directive",
+  "content": "This directive highlights an element on mouse hover using HostListener and HostBinding.",
+  "code": "import { Directive, HostBinding, HostListener } from '@angular/core';\n\n@Directive({ selector: '[appHighlight]' })\nexport class HighlightDirective {\n  @HostBinding('style.backgroundColor') bg = '';\n\n  @HostListener('mouseenter') onMouseEnter() {\n    this.bg = 'lightblue';\n  }\n\n  @HostListener('mouseleave') onMouseLeave() {\n    this.bg = '';\n  }\n}"
+}
+      ]
+    },
+    {
+      "heading": "Key Takeaways",
+      "content": [
+        "i) Directives allow DOM behavior manipulation.",
+        "ii) Structural directives alter layout; attribute directives change appearance or behavior.",
+        "iii) Custom directives promote reusable logic.",
+        "iv) Use HostBinding and HostListener for interacting with host elements.",
+        "v) Angular v15+ enables directive composition.",
+        "vi) Optimize directive usage with performance best practices."
+      ]
+    }
+  ]
+},
+{
+  "title": "Pipes",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "What are Pipes?",
+      "content": "Pipes are a way to transform output in Angular templates. They are used to format data before displaying it to the user, such as converting text to uppercase, formatting dates, or filtering arrays."
+    },
+    {
+      "heading": "What Do Pipes Do?",
+      "content": "Pipes take in data as input and transform it into a desired output format. They are commonly used in template expressions using the pipe (|) symbol."
+    },
+    {
+      "heading": "Basic Syntax",
+      "subsections": [
+        {
+          "subheading": "Template Example",
+          "content": "Usage of pipes in templates using `|` syntax.",
+          "code": "<p>{{ username | uppercase }}</p>\n<p>{{ price | currency:'USD' }}</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Built-in Pipes",
+      "subsections": [
+        {
+          "subheading": "A. Text Transformation Pipes",
+          "content": "- `uppercase` – Converts text to uppercase.\n- `lowercase` – Converts text to lowercase.\n- `titlecase` – Converts text to title case.",
+          "code": "<p>{{ 'angular pipes' | uppercase }}</p> <!-- Output: ANGULAR PIPES -->"
+        },
+        {
+          "subheading": "B. Number Formatting Pipes",
+          "content": "- `number` – Formats number with decimals.\n- `percent` – Converts number to percentage.\n- `currency` – Formats number as currency.",
+          "code": "<p>{{ 0.25 | percent }}</p> <!-- Output: 25% -->\n<p>{{ 5000 | currency:'INR' }}</p> <!-- Output: ₹5000.00 -->"
+        },
+        {
+          "subheading": "C. Date Formatting Pipe",
+          "content": "Common Date Formats:\n- 'short': 1/1/23, 12:00 AM\n- 'medium': Jan 1, 2023, 12:00:00 AM\n- 'long': January 1, 2023 at 12:00:00 AM GMT+1\n- 'full': Sunday, January 1, 2023 at 12:00:00 AM GMT+01:00",
+          "code": "<p>{{ today | date:'full' }}</p>"
+        },
+        {
+          "subheading": "D. Collection Pipes",
+          "content": "`slice`, `keyvalue`, and `json` are used for formatting arrays and objects.",
+          "code": "<li *ngFor=\"let item of items | slice:0:3\">{{ item }}</li>"
+        },
+        {
+          "subheading": "E. Other Utility Pipes",
+          "content": "`json`, `keyvalue`, `i18nSelect`, `i18nPlural`, etc., used for internationalization and object transformation."
+        }
+      ]
+    },
+    {
+      "heading": "Creating Custom Pipes",
+      "subsections": [
+        {
+          "subheading": "Basic Custom Pipe",
+          "content": "Create a pipe that reverses a string.",
+          "code": "import { Pipe, PipeTransform } from '@angular/core';\n@Pipe({ name: 'reverse' })\nexport class ReversePipe implements PipeTransform {\n  transform(value: string): string {\n    return value.split('').reverse().join('');\n  }\n}"
+        },
+        {
+          "subheading": "Parameterized Pipe",
+          "content": "Pipe with an argument to limit string length.",
+          "code": "@Pipe({ name: 'truncate' })\nexport class TruncatePipe implements PipeTransform {\n  transform(value: string, limit: number): string {\n    return value.length > limit ? value.substring(0, limit) + '...' : value;\n  }\n}"
+        },
+        {
+          "subheading": "Pure vs Impure Pipes",
+          "content": "Pure pipes are executed only when the input changes. Impure pipes run on every change detection cycle.",
+          "code": "@Pipe({ name: 'impurePipe', pure: false })\nexport class ImpurePipe implements PipeTransform {\n  transform(value: any): any {\n    return value; // Impure logic\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Advanced Pipe Techniques",
+      "subsections": [
+        {
+          "subheading": "A. Pipe Chaining",
+          "content": "Combine multiple pipes in one expression.",
+          "code": "<p>{{ description | lowercase | slice:0:10 }}</p>"
+        },
+        {
+          "subheading": "B. Using Pipes in Components",
+          "content": "Inject pipe classes and use them programmatically.",
+          "code": "constructor(private currencyPipe: CurrencyPipe) {}\nconst formatted = this.currencyPipe.transform(100, 'USD');"
+        },
+        {
+          "subheading": "C. Internationalization (i18n) Pipes",
+          "content": "Use `i18nSelect` and `i18nPlural` for multilingual support.",
+          "code": "<p>{{ gender | i18nSelect: genderMap }}</p>"
+        },
+        {
+          "subheading": "D. Async Pipe with Observables",
+          "content": "Automatically subscribes and unsubscribes to observables.",
+          "code": "<p>{{ user$ | async }}</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Complete Example",
+      "subsections": [
+        {
+          "subheading": "Combined Example",
+          "content": "This example demonstrates use of multiple pipes together.",
+          "code": "<p>{{ name | titlecase }}</p>\n<p>{{ salary | currency:'INR' }}</p>\n<p>{{ today | date:'shortDate' }}</p>\n<p>{{ text | truncate:15 }}</p>\n<p>{{ user$ | async }}</p>"
+        }
+      ]
+    },
+    {
+      "heading": "Key Takeaways",
+      "content": [
+        "i) Pipes format data in Angular templates.",
+        "ii) Angular offers many built-in pipes like date, currency, percent, etc.",
+        "iii) Custom pipes add reusable transformation logic.",
+        "iv) Use pure pipes for performance and impure when required.",
+        "v) AsyncPipe simplifies handling of observables."
+      ]
+    }
+  ]
+},
+{
+  "title": "Angular Services",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "What are Services?",
+      "content": "Services are TypeScript classes with a specific purpose: Share data between components, Implement application logic, Encapsulate external interactions (API calls), Provide reusable functionality.",
+      "subsections": []
+    },
+    {
+      "heading": "Creating a Service",
+      "content": "Generate and use basic services in Angular.",
+      "subsections": [
+        {
+          "subheading": "CLI Generation",
+          "content": "How to generate a service using Angular CLI.",
+          "code": "ng generate service data"
+        },
+        {
+          "subheading": "Basic Structure",
+          "content": "Basic service structure with example methods.",
+          "code": "@Injectable({\n  providedIn: 'root'\n})\nexport class DataService {\n  private data: string[] = [];\n\n  addData(item: string) {\n    this.data.push(item);\n  }\n\n  getData() {\n    return this.data;\n  }\n\n  clearData() {\n    this.data = [];\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Dependency Injection",
+      "content": "How Angular's DI system manages service instances. Later we will go in depth.",
+      "subsections": [
+        {
+          "subheading": "Injecting a Service",
+          "content": "Injecting the DataService inside a component and using its method.",
+          "code": "constructor(private dataService: DataService) { }\n\naddItem(item: string) {\n  this.dataService.addData(item);\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Service Use Cases",
+      "content": "Common patterns for using services.",
+      "subsections": [
+        {
+          "subheading": "Data Sharing Between Components",
+          "content": "Using BehaviorSubject for component communication. Later we will learn in depth about BehaviorSubject.",
+          "code": "@Injectable({ providedIn: 'root' })\nexport class SharedDataService {\n  private sharedData = new BehaviorSubject<string>('Initial Value');\n  currentData = this.sharedData.asObservable();\n\n  updateData(newValue: string) {\n    this.sharedData.next(newValue);\n  }\n}"
+        },
+        {
+          "subheading": "Logging Service",
+          "content": "Centralized logging functionality.",
+          "code": "@Injectable({ providedIn: 'root' })\nexport class LoggerService {\n  log(message: string, type: 'log' | 'error' | 'warn' = 'log') {\n    console[type](`[${new Date().toISOString()}] ${message}`);\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "HTTP Services",
+      "content": "Making API calls with Angular services.",
+      "subsections": [
+        {
+          "subheading": "Basic API Calls",
+          "content": "Using HttpClient to perform GET and POST operations.",
+          "code": "@Injectable({ providedIn: 'root' })\nexport class ApiService {\n  private apiUrl = 'https://api.example.com';\n\n  constructor(private http: HttpClient) { }\n\n  getUsers(): Observable<User[]> {\n    return this.http.get<User[]>(`${this.apiUrl}/users`);\n  }\n\n  createUser(user: User): Observable<User> {\n    return this.http.post<User>(`${this.apiUrl}/users`, user);\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "State Management",
+      "content": "Simple state management using services.",
+      "subsections": [
+        {
+          "subheading": "AuthService with BehaviorSubject",
+          "content": "Reactive authentication state using a service.",
+          "code": "@Injectable({ providedIn: 'root' })\nexport class AuthService {\n  private isAuthenticated = false;\n  private authStatus = new BehaviorSubject<boolean>(false);\n\n  get authStatus$() {\n    return this.authStatus.asObservable();\n  }\n\n  login() {\n    this.isAuthenticated = true;\n    this.authStatus.next(true);\n  }\n\n  logout() {\n    this.isAuthenticated = false;\n    this.authStatus.next(false);\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Singleton Nature",
+      "content": "Understanding service instantiation.",
+      "subsections": [
+        {
+          "subheading": "Default Singleton",
+          "content": "Root-provided services are singletons.",
+          "code": "@Injectable({ providedIn: 'root' })\nexport class CounterService {\n  private count = 0;\n\n  increment() {\n    this.count++;\n  }\n\n  getCount() {\n    return this.count;\n  }\n}"
+        },
+        {
+          "subheading": "Component-level Service",
+          "content": "Creating non-singleton services.",
+          "code": "@Component({\n  selector: 'app-local',\n  template: `...`,\n  providers: [CounterService] // New instance for this component\n})\nexport class LocalComponent { }"
+        }
+      ]
+    },
+    {
+      "heading": "Advanced HTTP Service Example",
+      "content": "Service with enhanced error handling.",
+      "subsections": [
+        {
+          "subheading": "API with Error Handling",
+          "content": "Reusable HTTP service with error logging and fallback.",
+          "code": "@Injectable({ providedIn: 'root' })\nexport class AdvancedApiService {\n  constructor(private http: HttpClient, private logger: LoggerService) { }\n\n  private handleError<T>(operation = 'operation', result?: T) {\n    return (error: any): Observable<T> => {\n      this.logger.error(`${operation} failed: ${error.message}`);\n      return of(result as T);\n    };\n  }\n\n  getData<T>(url: string): Observable<T> {\n    return this.http.get<T>(url).pipe(\n      catchError(this.handleError<T>('getData'))\n    );\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Service with Cache",
+      "content": "Implementing caching mechanism in services.",
+      "subsections": [
+        {
+          "subheading": "CachedDataService",
+          "content": "Caches HTTP responses to avoid redundant requests.",
+          "code": "@Injectable({ providedIn: 'root' })\nexport class CachedDataService {\n  private cache = new Map<string, any>();\n\n  constructor(private http: HttpClient) { }\n\n  getWithCache<T>(url: string): Observable<T> {\n    if (this.cache.has(url)) {\n      return of(this.cache.get(url));\n    }\n\n    return this.http.get<T>(url).pipe(\n      tap(data => this.cache.set(url, data)),\n      shareReplay(1)\n    );\n  }\n\n  clearCache(url?: string) {\n    if (url) {\n      this.cache.delete(url);\n    } else {\n      this.cache.clear();\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "User Service Practical Example",
+      "content": "This demonstrates how to use a service to provide data and inject it into a component.",
+      "subsections": [
+        {
+          "subheading": "User Service",
+          "content": "This service provides mock user data which is injected into the component.",
+          "code": "import { Injectable } from '@angular/core';\n\n@Injectable({ providedIn: 'root' })\nexport class UserService {\n  getUser() {\n    return { name: 'Rohit', role: 'Admin' };\n  }\n}"
+        },
+        {
+          "subheading": "Component Using Service",
+          "content": "This component injects and uses the UserService to display user data.",
+          "code": "import { Component, OnInit } from '@angular/core';\nimport { UserService } from './user.service';\n\n@Component({\n  selector: 'app-user',\n  template: `<p>{{ user.name }} - {{ user.role }}</p>`\n})\nexport class UserComponent implements OnInit {\n  user: any;\n  constructor(private userService: UserService) {}\n\n  ngOnInit() {\n    this.user = this.userService.getUser();\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Key Takeaways",
+      "content": [
+        "i) Singleton by Default.",
+        "ii) Cross-Component Communication.",
+        "iii) Decoupled Business Logic.",
+        "iv) Dependency Injection Core.",
+        "v) HTTP Client Integration."
+      ]
+    }
+  ]
+},
+{
+  "title": "Angular Dependency Injection",
+  "type": "Core Concept",
+  "sections": [
+    {
+      "heading": "Dependency Injection Fundamentals",
+      "content": "Dependency Injection (DI) is a design pattern where a class receives its dependencies from an external source rather than creating them itself. In Angular, the DI system provides declared dependencies to a class when instantiated. This promotes loose coupling, easier testing, and modular architecture.",
+      "subsections": [
+        {
+          "subheading": "Basic Injection",
+          "content": "The most common form where a service is injected via a class constructor. Angular's DI system automatically provides the instance.",
+          "code": "constructor(private dataService: DataService) { }"
+        },
+        {
+          "subheading": "Injection Tokens",
+          "content": "Used when you need to inject non-class values like configuration objects, strings, or functions.",
+          "code": "import { InjectionToken } from '@angular/core';\n\nconst API_URL = new InjectionToken<string>('apiUrl');\n\n// In module:\nproviders: [{ provide: API_URL, useValue: 'https://api.example.com' }]\n\n// In service:\nconstructor(@Inject(API_URL) private apiUrl: string) { }"
+        }
+      ]
+    },
+    {
+      "heading": "Provider Configuration",
+      "content": "Providers tell Angular's injector how to create or deliver dependencies. They can be configured at multiple levels with different behaviors.",
+      "subsections": [
+        {
+          "subheading": "Provider Scope",
+          "content": "Providers can be registered at different levels which affects their availability and instance lifecycle.",
+          "code": "// Application-wide singleton (preferred)\n@Injectable({ providedIn: 'root' })\n\n// Module-specific (deprecated)\n@NgModule({ providers: [MyService] })\n\n// Component-specific (new instance per component)\n@Component({ providers: [MyService] })"
+        },
+        {
+          "subheading": "Provider Types",
+          "content": "Different ways to configure how dependencies are provided.",
+          "code": "providers: [\n  // Class provider (standard)\n  MyService,\n  \n  // Value provider\n  { provide: 'TITLE', useValue: 'My App' },\n  \n  // Factory provider\n  { provide: Logger, useFactory: () => new Logger('prod') },\n  \n  // Alias provider\n  { provide: NewService, useClass: ExistingService }\n]"
+        }
+      ]
+    },
+    {
+      "heading": "Hierarchical Injectors",
+      "content": "Angular has a hierarchical injection system with injectors at different levels. When a component requests a dependency, Angular starts with the component's injector and moves up the hierarchy until it finds the provider.",
+      "subsections": [
+        {
+          "subheading": "Injector Hierarchy",
+          "content": "The lookup order for dependencies follows the component tree structure.",
+          "code": "AppModule injector (root)\n  └── FeatureModule injector\n       └── Component injector"
+        },
+        {
+          "subheading": "View Providers",
+          "content": "Special providers that are only visible to a component and its view children (not content children).",
+          "code": "@Component({\n  viewProviders: [ServiceA]\n})"
+        }
+      ]
+    },
+    {
+      "heading": "Advanced Injection Techniques",
+      "content": "More sophisticated patterns for complex dependency scenarios.",
+      "subsections": [
+        {
+          "subheading": "Optional Dependencies",
+          "content": "Dependencies that aren't required for the class to function.",
+          "code": "constructor(@Optional() private optionalService?: OptionalService) { }"
+        },
+        {
+          "subheading": "Self and SkipSelf",
+          "content": "Modifiers that change how Angular searches for dependencies.",
+          "code": "constructor(\n  @Self() private onlyLocal: LocalService,\n  @SkipSelf() private notLocal: GlobalService\n) { }"
+        },
+        {
+          "subheading": "Host Binding",
+          "content": "Limits dependency lookup to the current component and its host element.",
+          "code": "constructor(@Host() private hostService: HostService) { }"
+        }
+      ]
+    },
+    {
+      "heading": "Practical Examples",
+      "content": "Real-world implementations of dependency injection patterns.",
+      "subsections": [
+        {
+  "subheading": "Logger Service",
+  "content": "A shared service to log messages, demonstrating Angular dependency injection.",
+  "code": "import { Injectable } from '@angular/core';\n\n@Injectable({ providedIn: 'root' })\nexport class LoggerService {\n  log(message: string) {\n    console.log('Logger:', message);\n  }\n}"
+}
+      ]
+    },
+    {
+      "heading": "Key Takeaways",
+      "content": [
+        "i) Angular uses Dependency Injection to manage services and improve testability.",
+        "ii) Providers define how services are created and shared.",
+        "iii) Hierarchical injectors allow scoped service control.",
+        "iv) Injection tokens enable injection of values and configs.",
+        "v) Optional, Self, SkipSelf, Host decorators offer fine-grained control."
+      ]
+    }
+  ]
+},
+{
+  "title": "Template-Driven Forms",
+  "type": "Forms",
+  "sections": [
+    {
+      "heading": "What Are Template-Driven Forms?",
+      "content": "Template-driven forms are a way to build forms in Angular using directives in the HTML template. They are simple to use and rely heavily on Angular’s built-in directives like ngModel, required, and ngForm."
+    },
+    {
+      "heading": "How Template-Driven Forms Work",
+      "content": "Template-driven forms use Angular directives like ngModel to bind form inputs directly to model properties in the component. Angular automatically creates a FormGroup object (ngForm) behind the scenes and tracks form validity, dirty/pristine status, and touched/untouched states."
+    },
+    {
+      "heading": "Enabling Template-Driven Forms",
+      "subsections": [
+        {
+          "subheading": "Import FormsModule",
+          "content": "Import FormsModule in the AppModule to enable support for template-driven forms.",
+          "code": "import { NgModule } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\n\n@NgModule({\n  imports: [FormsModule] // Required for template-driven forms\n})\nexport class AppModule {}"
+        }
+      ]
+    },
+    {
+      "heading": "Basic Form Example",
+      "subsections": [
+        {
+          "subheading": "HTML Template",
+          "content": "This is a basic form with username and email fields, using ngModel for two-way binding and basic validation.",
+          "code": "<form #myForm=\"ngForm\" (ngSubmit)=\"onSubmit(myForm)\">\n  <div>\n    <label>Username:</label>\n    <input type=\"text\" name=\"username\" [(ngModel)]=\"user.username\" required minlength=\"3\">\n    <div *ngIf=\"myForm.controls['username']?.errors?.['required']\">Username is required.</div>\n    <div *ngIf=\"myForm.controls['username']?.errors?.['minlength']\">Minimum 3 characters.</div>\n  </div>\n  <div>\n    <label>Email:</label>\n    <input type=\"email\" name=\"email\" [(ngModel)]=\"user.email\" required pattern=\"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$\">\n  </div>\n  <button type=\"submit\" [disabled]=\"myForm.invalid\">Submit</button>\n</form>"
+        },
+        {
+          "subheading": "Component Class",
+          "content": "Component class holding the model and submit logic.",
+          "code": "import { Component } from '@angular/core';\nimport { NgForm } from '@angular/forms';\n\n@Component({\n  selector: 'app-user-form',\n  templateUrl: './user-form.component.html'\n})\nexport class UserFormComponent {\n  user = { username: '', email: '' };\n\n  onSubmit(form: NgForm) {\n    if (form.valid) {\n      console.log('Form submitted:', this.user);\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Key Directives in Template-Driven Forms",
+      "subsections": [
+        {
+          "subheading": "ngModel",
+          "content": "Two-way data binding between form input and component property.",
+          "code": "<input [(ngModel)]=\"user.name\" name=\"name\">"
+        },
+        {
+          "subheading": "required",
+          "content": "Adds required field validation.",
+          "code": "<input type=\"text\" name=\"email\" [(ngModel)]=\"user.email\" required>"
+        },
+        {
+          "subheading": "ngForm",
+          "content": "Automatically created by Angular to track the form state.",
+          "code": "<form #myForm=\"ngForm\" (ngSubmit)=\"submit(myForm)\"> ... </form>"
+        },
+        {
+          "subheading": "minlength / maxlength / pattern",
+          "content": "Adds built-in validation for minimum and maximum length and regex patterns.",
+          "code": "<input name=\"username\" [(ngModel)]=\"user.username\" required minlength=\"3\" pattern=\"^[a-zA-Z]+$\">"
+        },
+        {
+          "subheading":"ngModelGroup",
+          "content":"Groups related form controls for validation.",
+          "code":"<div ngModelGroup=\"address\">\n <input name=\"city\" ngModel required>\n <input name=\"zip\" ngModel>\n </div>"
+        }
+      ]
+    },
+    {
+      "heading": "Validation in Template-Driven Forms",
+      "subsections": [
+        {
+          "subheading": "Built-in HTML5 Validation",
+          "content": "Angular supports native HTML5 validation attributes like required, minlength, maxlength, type, and pattern.",
+          "code": "<input name=\"username\" [(ngModel)]=\"user.username\" required minlength=\"3\">"
+        },
+        {
+          "subheading": "Displaying Validation Errors",
+          "content": "Use template logic to conditionally show error messages.",
+          "code": "<input name=\"username\" [(ngModel)]=\"user.username\" required minlength=\"3\">\n<div *ngIf=\"myForm.controls['username']?.errors?.['required']\">Username is required.</div>\n<div *ngIf=\"myForm.controls['username']?.errors?.['minlength']\">Minimum 3 characters.</div>"
+        }
+      ]
+    },
+     {
+      "heading": "Handling Form Submission",
+      "subsections": [
+        {
+          "subheading": "Form Submission Example",
+          "content": "Use ngSubmit to handle form submission and pass the form object to the component.",
+          "code": "<form #myForm=\"ngForm\" (ngSubmit)=\"onSubmit(myForm)\">\n  <!-- form fields -->\n  <button type=\"submit\">Submit</button>\n</form>"
+        },
+        {
+          "subheading": "Submit Handler in Component",
+          "content": "This method checks if the form is valid and logs user data.",
+          "code": "onSubmit(form: NgForm) {\n  if (form.valid) {\n    console.log('Submitted Data:', this.user);\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "When to Use Template-Driven Forms",
+      "content": "Template-driven forms are ideal when working with simple forms, fewer dynamic controls, or when you prefer to keep logic inside templates. They are also beginner-friendly and well-suited for small-to-medium applications."
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) Template-driven forms are built using Angular directives in the template.",
+        "ii) You must import FormsModule to use template-driven forms.",
+        "iii) ngModel enables two-way binding between input and component.",
+        "iv) Angular handles form state, validation, and submission automatically via ngForm.",
+        "v) Ideal for simple, static forms or small-scale applications."
+      ]
+    }
+
+  ]
+}
+,
+{
+  "title": "Reactive Forms",
+  "type": "Forms",
+  "sections": [
+    {
+      "heading": "What Are Reactive Forms?",
+      "content": "Reactive Forms are a model-driven approach to handling form inputs in Angular. The form model is explicitly created in the component using classes like FormControl, FormGroup, and FormArray. This gives you full control over validation, data flow, and dynamic changes."
+    },
+    {
+      "heading": "Setting Up Reactive Forms",
+      "subsections": [
+        {
+          "subheading": "Import ReactiveFormsModule",
+          "content": "You need to import ReactiveFormsModule in your AppModule to use reactive forms.",
+          "code": "import { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  imports: [ReactiveFormsModule] // Required for Reactive Forms\n})\nexport class AppModule {}"
+        },
+        {
+          "subheading": "Component Setup",
+          "content": "Define form structure in the component class.",
+          "code": "import { Component, OnInit } from '@angular/core';\nimport { FormGroup, FormControl } from '@angular/forms';\n\n@Component({\n  selector: 'app-user-form',\n  templateUrl: './user-form.component.html'\n})\nexport class UserFormComponent implements OnInit {\n  userForm!: FormGroup;\n\n  ngOnInit() {\n    this.userForm = new FormGroup({\n      username: new FormControl(''),\n      email: new FormControl('')\n    });\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Core Building Blocks",
+      "subsections": [
+        {
+          "subheading": "FormControl",
+          "content": "Represents a single form input with value and state (valid, touched, etc.).",
+          "code": "const nameControl = new FormControl('John');\nconsole.log(nameControl.value);"
+        },
+        {
+          "subheading": "FormGroup",
+          "content": "A collection of FormControls grouped together.",
+          "code": "const profileForm = new FormGroup({\n  firstName: new FormControl(''),\n  lastName: new FormControl('')\n});"
+        },
+        {
+          "subheading": "FormArray",
+          "content": "An array of FormControls, useful for dynamic forms.",
+          "code": "const skills = new FormArray([\n  new FormControl('JavaScript'),\n  new FormControl('Angular')\n]);"
+        },
+        {
+          "subheading": "FormBuilder (Simpler Syntax)",
+          "content": "FormBuilder helps write concise and readable form creation logic.",
+          "code": "constructor(private fb: FormBuilder) {}\n\nthis.userForm = this.fb.group({\n  username: [''],\n  email: ['']\n});"
+        }
+      ]
+    },
+    {
+      "heading": "Binding Form to Template",
+      "subsections": [
+        {
+          "subheading": "HTML Template",
+          "content": "Use [formGroup] directive and formControlName to bind component form to HTML template.",
+          "code": "<form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\">\n  <label>Username:</label>\n  <input formControlName=\"username\">\n\n  <label>Email:</label>\n  <input formControlName=\"email\">\n\n  <button type=\"submit\">Submit</button>\n</form>"
+        }
+      ]
+    },
+    {
+      "heading": "Validation in Reactive Forms",
+      "subsections": [
+        {
+          "subheading": "Adding Validators",
+          "content": "Use Angular’s built-in validators like required, email, minLength etc.",
+          "code": "this.userForm = new FormGroup({\n  username: new FormControl('', [Validators.required, Validators.minLength(3)]),\n  email: new FormControl('', [Validators.required, Validators.email])\n});"
+        },
+        {
+          "subheading": "Displaying Validation Errors",
+          "content": "Access error messages using control.errors in the template.",
+          "code": "<div *ngIf=\"userForm.get('username')?.errors?.['required']\">\n  Username is required.\n</div>\n<div *ngIf=\"userForm.get('username')?.errors?.['minlength']\">\n  Minimum 3 characters required.\n</div>"
+        }
+      ]
+    },
+    {
+      "heading": "Handling Form Submission",
+      "subsections": [
+        {
+          "subheading": "Submit Handler",
+          "content": "Handle form submission and access form values.",
+          "code": "onSubmit() {\n  if (this.userForm.valid) {\n    console.log('Form submitted:', this.userForm.value);\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "When to Use Reactive Forms?",
+      "content": "Reactive forms are best suited for large, complex forms with dynamic input fields, custom validators, and advanced interactivity. They are also ideal when you want full control over the form logic in the component."
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) Reactive Forms are created programmatically in the component class.",
+        "ii) Use FormControl, FormGroup, and FormArray to build the form model.",
+        "iii) Validators provide built-in validation capabilities.",
+        "iv) Template binds to the form model using [formGroup] and formControlName.",
+        "v) Reactive Forms offer better control for complex, dynamic, and large-scale forms."
+      ]
+    }
+  ]
+},
+{
+  "title": "Routing",
+  "type": "Routing & Navigation",
+  "sections": [
+    {
+      "heading": "What is Routing?",
+      "content": "Routing in Angular is the process of defining navigation paths between views (components) in a single-page application. It allows users to move across different parts of the app without reloading the entire page.",
+      "subsections": [
+        {
+          "subheading": "Single Page Navigation",
+          "content": "Angular uses the Router module to enable dynamic navigation within a single-page application (SPA). It updates the URL and displays the corresponding component view without reloading the entire page."
+        }
+      ]
+    },
+    {
+      "heading": "Routing in Angular",
+      "content": "To enable routing, Angular uses the RouterModule from @angular/router. You define route configurations that map paths to components.",
+      "subsections": [
+        {
+          "subheading": "Basic Routing Example",
+          "content": "Define routes and associate them with components using the Routes array, and register RouterModule.",
+          "code": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { HomeComponent } from './home/home.component';\nimport { AboutComponent } from './about/about.component';\n\nconst routes: Routes = [\n  { path: '', component: HomeComponent },\n  { path: 'about', component: AboutComponent }\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule {}"
+        }
+      ]
+    },
+    {
+      "heading": "Types of Routes in Angular",
+      "content": "Angular supports multiple route types depending on use case and complexity.",
+      "subsections": [
+        {
+          "subheading": "Static Routes",
+          "content": "Routes mapped directly to a component.",
+          "code": "{ path: 'about', component: AboutComponent }"
+        },
+        {
+          "subheading": "Dynamic Routes",
+          "content": "Include parameters to render dynamic content.",
+          "code": "{ path: 'user/:id', component: UserComponent }"
+        },
+        {
+          "subheading": "Wildcard Routes",
+          "content": "Catch all undefined paths and redirect or show a 404 page.",
+          "code": "{ path: '**', component: PageNotFoundComponent }"
+        },
+        {
+          "subheading": "Redirect Routes",
+          "content": "Redirect from one route to another.",
+          "code": "{ path: '', redirectTo: '/home', pathMatch: 'full' }"
+        },
+        {
+          "subheading": "Nested (Child) Routes",
+          "content": "Used in modules or features requiring sub-navigation.",
+          "code": "{ path: 'dashboard', component: DashboardComponent, children: [\n  { path: 'stats', component: StatsComponent },\n  { path: 'reports', component: ReportsComponent }\n]}"
+        }
+      ]
+    },
+    {
+      "heading": "Configure Routing in Angular",
+      "content": "Routing configuration can be set up either while creating the Angular project or by manually adding routing files and logic.",
+      "subsections": [
+        {
+          "subheading": "Generate App with Routing",
+          "content": "Use the --routing flag during project setup to create routing configuration.",
+          "code": "ng new routing-app --routing"
+        },
+        {
+          "subheading": "Default Routing File Structure",
+          "content": "The CLI creates an app.routes.ts file with a default empty route array.",
+          "code": "import { Routes } from '@angular/router';\n\nexport const routes: Routes = [];"
+        },
+        {
+          "subheading": "Explanation",
+          "content": "- Routes is imported from '@angular/router'\n- It's used to define route-to-component mappings\n- Routes is a type, and also the name of the variable used for configuration"
+        }
+      ]
+    },
+    {
+      "heading": "Defining Routes",
+      "content": "To make routes functional, we need to define them in a configuration file, use <router-outlet> in a template, and provide navigation links.",
+      "subsections": [
+        {
+          "subheading": "Adding Routes in Configuration File",
+          "content": "Import components and define the routing configuration.",
+          "code": "const routes: Routes = [\n  { path: '', component: HomeComponent },\n  { path: 'about', component: AboutComponent }\n];"
+        },
+        {
+          "subheading": "Adding <router-outlet> in App Component",
+          "content": "router-outlet is a directive that displays the component for the current route.",
+          "code": "<router-outlet></router-outlet>"
+        },
+        {
+          "subheading": "Testing Routing",
+          "content": "Use browser navigation or direct URL access to test component rendering."
+        },
+        {
+          "subheading": "Using RouterLink for Navigation",
+          "content": "Use routerLink directive to navigate between routes.",
+          "code": "<nav>\n  <a routerLink=\"/\">Home</a>\n  <a routerLink=\"/about\">About</a>\n</nav>"
+        }
+      ]
+    }
+  ]
+},
+{
+  "title": "Navigation",
+  "type": "Routing & Navigation",
+  "sections": [
+    {
+      "heading": "What is Navigation?",
+      "content": "Navigation in Angular refers to changing the view by transitioning to different routes. It updates the URL and dynamically renders the associated component using Angular's Router.",
+      "subsections": [
+        {
+          "subheading": "Single Page App Navigation",
+          "content": "Angular handles navigation client-side using the Router, which replaces the need for full-page reloads."
+        }
+      ]
+    },
+    {
+      "heading": "Programmatic Navigation using Router",
+      "content": "You can navigate between routes programmatically using the `Router` service provided by `@angular/router`.",
+      "subsections": [
+        {
+          "subheading": "Using Router.navigate()",
+          "content": "Navigate to a specific path using the `navigate` method.",
+          "code": "import { Router } from '@angular/router';\n\nconstructor(private router: Router) {}\n\nnavigateToAbout() {\n  this.router.navigate(['/about']);\n}"
+        },
+        {
+          "subheading": "Using Router.navigateByUrl()",
+          "content": "Directly specify the URL as a string.",
+          "code": "this.router.navigateByUrl('/contact');"
+        }
+      ]
+    },
+    {
+      "heading": "Navigation with RouterLink",
+      "content": "Angular provides `routerLink` directive to navigate declaratively in templates.",
+      "subsections": [
+        {
+          "subheading": "Example of routerLink",
+          "content": "Bind router paths to anchor tags using the `routerLink` directive.",
+          "code": "<a routerLink=\"/home\">Home</a>\n<a routerLink=\"/profile\">Profile</a>"
+        },
+        {
+          "subheading": "routerLink with Dynamic Params",
+          "content": "Use an array to pass dynamic segments.",
+          "code": "<a [routerLink]=\"['/user', userId]\">View Profile</a>"
+        }
+      ]
+    },
+    {
+  "heading": "router-outlet: Rendering Routed Views",
+  "content": "The `<router-outlet>` directive tells Angular where to render the component associated with the current route. It acts as a placeholder for routed components in your main template.",
+  "subsections": [
+    {
+      "subheading": "Basic Usage",
+      "content": "Add `<router-outlet>` in the root or any other component to display routed components there.",
+      "code": "<!-- app.component.html -->\n<nav>\n  <a routerLink=\"/home\">Home</a>\n  <a routerLink=\"/about\">About</a>\n</nav>\n<router-outlet></router-outlet>"
+    },
+    {
+      "subheading": "Multiple Router Outlets",
+      "content": "Angular supports named outlets for advanced routing scenarios.",
+      "code": "<router-outlet name=\"sidebar\"></router-outlet>\n<router-outlet></router-outlet>"
+    }
+  ]
+},
+    {
+      "heading": "Accessing Route Information",
+      "content": "Angular provides ActivatedRoute to access information about the current route such as parameters, query params, and fragment.",
+      "subsections": [
+        {
+          "subheading": "Accessing Route Parameters",
+          "content": "Use `ActivatedRoute` to retrieve dynamic values in components.",
+          "code": "import { ActivatedRoute } from '@angular/router';\n\nconstructor(private route: ActivatedRoute) {}\n\nngOnInit() {\n  const id = this.route.snapshot.paramMap.get('id');\n  console.log(id);\n}"
+        },
+        {
+          "subheading": "Accessing Query Parameters",
+          "content": "Use `queryParamMap` to get optional query parameters.",
+          "code": "this.route.queryParamMap.subscribe(params => {\n  const token = params.get('auth');\n  console.log(token);\n});"
+        }
+      ]
+    },
+    {
+      "heading": "Navigation Events",
+      "content": "Angular emits events during navigation, which can be subscribed to for analytics, loading indicators, etc.",
+      "subsections": [
+        {
+          "subheading": "Using Router Events",
+          "content": "Track events like NavigationStart, NavigationEnd, NavigationError, etc.",
+          "code": "import { Router, NavigationStart } from '@angular/router';\n\nconstructor(private router: Router) {\n  this.router.events.subscribe(event => {\n    if (event instanceof NavigationStart) {\n      console.log('Navigation started');\n    }\n  });\n}"
+        }
+      ]
+    },
+    {
+      "heading": "When to Use Programmatic vs Declarative Navigation",
+      "content": "Use declarative (`routerLink`) when the destination is known at design time. Use programmatic navigation (`router.navigate`) when the path depends on logic or user actions (e.g., after login, form submission, etc.)"
+    }
+  ]
+},
+{
+  "title": "Route Guards",
+  "type": "Routing & Navigation",
+  "sections": [
+    {
+      "heading": "What are Route Guards?",
+      "content": "Route Guards in Angular control access to certain routes based on conditions like authentication or permissions. They prevent users from navigating to unauthorized pages.",
+      "subsections": []
+    },
+    {
+      "heading": "Types of Route Guards",
+      "content": "Angular provides five types of route guards for different scenarios.",
+      "subsections": [
+        {
+          "subheading": "1. CanActivate",
+          "content": "Prevents access to a route unless a condition is met (e.g., user is logged in).",
+          "code": "canActivate: [AuthGuard]"
+        },
+        {
+          "subheading": "2. CanActivateChild",
+          "content": "Protects child routes of a route.",
+          "code": "canActivateChild: [AuthGuard]"
+        },
+        {
+          "subheading": "3. CanDeactivate",
+          "content": "Checks if a user can exit a component, useful for unsaved form data warnings.",
+          "code": "canDeactivate: [PendingChangesGuard]"
+        },
+        {
+          "subheading": "4. CanLoad",
+          "content": "Prevents lazy-loaded modules from loading if conditions fail.",
+          "code": "canLoad: [AuthGuard]"
+        },
+        {
+          "subheading": "5. Resolve",
+          "content": "Pre-fetches data before navigating to a route.",
+          "code": "resolve: { user: UserResolverService }"
+        }
+      ]
+    },
+    {
+      "heading": "Implementing a Route Guard",
+      "content": "You implement a guard by creating a service that implements one of Angular's guard interfaces.",
+      "subsections": [
+        {
+          "subheading": "Example: AuthGuard using CanActivate",
+          "content": "An example showing how to restrict access if not authenticated.",
+          "code": "import { Injectable } from '@angular/core';\nimport { CanActivate, Router } from '@angular/router';\nimport { AuthService } from './auth.service';\n\n@Injectable({ providedIn: 'root' })\nexport class AuthGuard implements CanActivate {\n  constructor(private auth: AuthService, private router: Router) {}\n\n  canActivate(): boolean {\n    if (this.auth.isLoggedIn()) {\n      return true;\n    } else {\n      this.router.navigate(['/login']);\n      return false;\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Registering Route Guards",
+      "content": "Apply guards in the route configuration using respective keys like `canActivate`, `canDeactivate`, etc.",
+      "subsections": [
+        {
+          "subheading": "Example Route Config with Guard",
+          "content": "How to use guards while defining routes.",
+          "code": "{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }"
+        }
+      ]
+    },
+    {
+      "heading": "When to Use Route Guards",
+      "content": "Use Route Guards to:\n- Protect routes from unauthorized users\n- Prevent data loss on form leave\n- Preload data before navigation\n- Conditionally load feature modules",
+      "subsections": []
+    }
+  ]
+},
+{
+  "title": "Lazy Loading",
+  "type": "Routing & Navigation",
+  "sections": [
+    {
+      "heading": "What is Lazy Loading?",
+      "content": "Lazy Loading is an Angular technique that loads feature modules only when they are needed, improving application performance by reducing initial bundle size.",
+      "subsections": []
+    },
+    {
+      "heading": "Benefits of Lazy Loading",
+      "content": "Lazy Loading improves app performance by:\n- Reducing initial load time\n- Splitting code into manageable chunks\n- Loading modules only when needed",
+      "subsections": []
+    },
+    {
+      "heading": "Setting Up Lazy Loading",
+      "content": "To lazy load a module, create a feature module with its own routing configuration and use `loadChildren` in the main route.",
+      "subsections": [
+        {
+          "subheading": "Step 1: Generate Feature Module",
+          "content": "Use Angular CLI to generate a module with routing.",
+          "code": "ng generate module admin --route admin --module app.module"
+        },
+        {
+          "subheading": "Step 2: Setup Route in App Routing",
+          "content": "Configure the route with `loadChildren`.",
+          "code": "{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }"
+        },
+        {
+          "subheading": "Step 3: Setup Feature Module Routing",
+          "content": "Define routes in `admin-routing.module.ts`.",
+          "code": "const routes: Routes = [\n  { path: '', component: AdminDashboardComponent }\n];"
+        }
+      ]
+    },
+    {
+      "heading": "Best Practices",
+      "content": "• Keep feature modules self-contained\n• Avoid circular dependencies\n• Use preload strategies if needed\n• Combine with Route Guards for secured access",
+      "subsections": []
+    },
+    {
+      "heading": "When to Use Lazy Loading?",
+      "content": "Use lazy loading when:\n- Your app has multiple feature modules\n- You want to optimize load time\n- Routes are not always required immediately",
+      "subsections": []
+    }
+  ]
+},
+{
+  "title": "Observables",
+  "type": "RxJS",
+  "sections": [
+    {
+      "heading": "What is an Observable?",
+      "content": "An Observable is a core concept in RxJS that represents a stream of data that can be observed over time. Observables can emit multiple values asynchronously and are a powerful way to handle events, HTTP requests, and real-time data in Angular applications."
+    },
+    {
+      "heading": "Observable Lifecycle",
+      "content": [
+        "1. **Creation** – An observable is created using helper functions (like `of()`, `from()`, etc.).",
+        "2. **Subscription** – A consumer subscribes to the observable to start receiving data.",
+        "3. **Emission** – The observable emits data using `next()`, `error()`, or `complete()` methods.",
+        "4. **Teardown** – Once completed or unsubscribed, resources are cleaned up."
+      ]
+    },
+    {
+      "heading": "Why Use Observables?",
+      "content": "Observables offer a unified, declarative approach to handle asynchronous operations like HTTP requests, user input events, intervals, or even custom data streams."
+    },
+    {
+      "heading": "Basic Observable Example",
+      "subsections": [
+        {
+          "subheading": "Creating an Observable",
+          "content": "You can create a basic observable using the `Observable` constructor.",
+          "code": "import { Observable } from 'rxjs';\n\nconst observable = new Observable(observer => {\n  observer.next('Hello');\n  observer.next('World');\n  observer.complete();\n});"
+        },
+        {
+          "subheading": "Observer with next(), error(), complete()",
+          "content": "Defines how to respond to each signal from the Observable.",
+          "code": "observable.subscribe({\n  next: value => console.log('Received:', value),\n  error: err => console.error('Error:', err),\n  complete: () => console.log('Done')\n});"
+        }
+      ]
+    },
+    {
+      "heading": "Ways to Create Observables",
+      "subsections": [
+        {
+          "subheading": "Using of()",
+          "content": "Emits a sequence of values synchronously.",
+          "code": "import { of } from 'rxjs';\n\nconst source$ = of(1, 2, 3);\nsource$.subscribe(val => console.log(val));"
+        },
+        {
+          "subheading": "Using from()",
+          "content": "Converts arrays, promises, or iterable objects into Observables.",
+          "code": "import { from } from 'rxjs';\n\nconst arr$ = from([10, 20, 30]);\narr$.subscribe(val => console.log(val));"
+        },
+        {
+          "subheading": "Using interval()",
+          "content": "Emits an increasing number at specified time intervals.",
+          "code": "import { interval } from 'rxjs';\n\nconst timer$ = interval(1000);\ntimer$.subscribe(val => console.log('Second:', val));"
+        },
+        {
+          "subheading": "Using fromEvent()",
+          "content": "Creates an observable from DOM events like clicks.",
+          "code": "import { fromEvent } from 'rxjs';\n\nconst clicks$ = fromEvent(document, 'click');\nclicks$.subscribe(() => console.log('Clicked!'));"
+        }
+      ]
+    },
+    {
+      "heading": "Subscribing and Unsubscribing",
+      "subsections": [
+        {
+          "subheading": "Subscribe to Observable",
+          "content": "You must subscribe to start receiving data.",
+          "code": "const subscription = source$.subscribe(val => console.log(val));"
+        },
+        {
+          "subheading": "Unsubscribe from Observable",
+          "content": "To avoid memory leaks, always unsubscribe in ngOnDestroy.",
+          "code": "ngOnDestroy() {\n  subscription.unsubscribe();\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Practical API Example with Observables",
+      "subsections": [
+        {
+          "subheading": "Service Class Example",
+          "content": "Using HttpClient to fetch data as Observable.",
+          "code": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { Observable } from 'rxjs';\n\n@Injectable({ providedIn: 'root' })\nexport class DataService {\n  constructor(private http: HttpClient) {}\n\n  getUsers(): Observable<any> {\n    return this.http.get('https://jsonplaceholder.typicode.com/users');\n  }\n}"
+        },
+        {
+          "subheading": "Component Consuming the Service",
+          "content": "Subscribing to observable returned from service.",
+          "code": "import { Component, OnInit } from '@angular/core';\nimport { DataService } from './data.service';\n\n@Component({\n  selector: 'app-user',\n  template: `<div *ngFor=\"let user of users\">{{ user.name }}</div>`\n})\nexport class UserComponent implements OnInit {\n  users: any[] = [];\n\n  constructor(private dataService: DataService) {}\n\n  ngOnInit() {\n    this.dataService.getUsers().subscribe(data => {\n      this.users = data;\n    });\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Common RxJS Operators",
+      "subsections": [
+        {
+          "subheading": "map()",
+          "content": "Transforms each emitted value.",
+          "code": "import { map } from 'rxjs/operators';\nsource$.pipe(\n  map(val => val * 2)\n).subscribe(console.log);"
+        },
+        {
+          "subheading": "filter()",
+          "content": "Emits only values that satisfy the condition.",
+          "code": "import { filter } from 'rxjs/operators';\nsource$.pipe(\n  filter(val => val % 2 === 0)\n).subscribe(console.log);"
+        },
+        {
+          "subheading": "switchMap()",
+          "content": "Cancels previous observable and switches to new one.",
+          "code": "import { switchMap } from 'rxjs/operators';\nfromEvent(button, 'click')\n  .pipe(switchMap(() => this.http.get('api/data')))\n  .subscribe();"
+        },
+        {
+          "subheading": "debounceTime()",
+          "content": "Emits after a pause of specified duration.",
+          "code": "import { debounceTime } from 'rxjs/operators';\nfromEvent(input, 'keyup')\n  .pipe(debounceTime(500))\n  .subscribe();"
+        }
+      ]
+    },
+    {
+      "heading": "When to Use Observables?",
+      "content": [
+        "i) HTTP Requests (async APIs)",
+        "ii) User Events (clicks, inputs)",
+        "iii) Real-time Data (websockets)",
+        "iv) State Sharing (service between components)"
+      ]
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) Observables represent asynchronous data streams.",
+        "ii) You subscribe to receive values, errors, or completion signals.",
+        "iii) RxJS provides powerful operators to transform and manage streams.",
+        "iv) Unsubscribing prevents memory leaks.",
+        "v) Observables are the foundation of Angular’s reactive programming."
+      ]
+    }
+  ]
+},
+{
+  "title": "Subjects",
+  "type": "RxJS",
+  "sections": [
+    {
+      "heading": "What is a Subject?",
+      "content": "A Subject in RxJS is a special type of Observable that allows values to be multicasted to many Observers. It acts both as an Observable (you can subscribe to it) and an Observer (you can push values using next())."
+    },
+    {
+      "heading": "Why Subject?",
+      "content": "Unlike regular Observables which are unicast (each subscriber gets a separate execution), Subjects are multicast. They enable broadcasting data to multiple subscribers and are ideal for sharing data across different parts of your app."
+    },
+    {
+      "heading": "Basic Subject Example",
+      "subsections": [
+        {
+          "subheading": "Broadcast with Subject",
+          "content": "This example shows how a Subject can emit data to multiple subscribers.",
+          "code": "import { Subject } from 'rxjs';\n\nconst subject = new Subject();\n\nsubject.subscribe(data => console.log('Observer 1:', data));\nsubject.subscribe(data => console.log('Observer 2:', data));\n\nsubject.next('Hello');\nsubject.next('World');"
+        }
+      ]
+    },
+    {
+      "heading": "Types of Subjects",
+      "subsections": [
+        {
+          "subheading": "1. Subject",
+          "content": "Default subject that sends values to all current subscribers.",
+          "code": "const sub = new Subject();\nsub.subscribe(val => console.log('A:', val));\nsub.next('Angular');\nsub.subscribe(val => console.log('B:', val));\nsub.next('RxJS');"
+        },
+        {
+          "subheading": "2. BehaviorSubject",
+          "content": "Requires an initial value and always emits the latest value to new subscribers.",
+          "code": "import { BehaviorSubject } from 'rxjs';\n\nconst behaviorSub = new BehaviorSubject('Initial');\n\nbehaviorSub.subscribe(val => console.log('Observer A:', val));\nbehaviorSub.next('Updated');\n\nbehaviorSub.subscribe(val => console.log('Observer B:', val));"
+        },
+        {
+          "subheading": "3. ReplaySubject",
+          "content": "Replays specified number of previous values to new subscribers.",
+          "code": "import { ReplaySubject } from 'rxjs';\n\nconst replaySub = new ReplaySubject(2);\n\nreplaySub.next('One');\nreplaySub.next('Two');\nreplaySub.next('Three');\n\nreplaySub.subscribe(val => console.log('Observer:', val));"
+        },
+        {
+          "subheading": "4. AsyncSubject",
+          "content": "Only emits the last value to subscribers when completed.",
+          "code": "import { AsyncSubject } from 'rxjs';\n\nconst asyncSub = new AsyncSubject();\n\nasyncSub.subscribe(val => console.log('Observer A:', val));\n\nasyncSub.next(1);\nasyncSub.next(2);\nasyncSub.next(3);\n\nasyncSub.complete();"
+        }
+      ]
+    },
+    {
+      "heading": "Practical Use Cases",
+      "content": [
+        "i) Sharing data between sibling components",
+        "ii) Broadcasting data to multiple parts of the app",
+        "iii) Managing state reactively across unrelated components",
+        "iv) Implementing service-based communication (pub-sub pattern)"
+      ]
+    },
+    {
+      "heading": "When to Use Subjects?",
+      "content": [
+        "i) When you need to emit and consume data in multiple parts of your app.",
+        "ii) When you're building a shared data service for components.",
+        "iii) When you're implementing custom event emitters."
+      ]
+    },
+    {
+      "heading": "Example: Shared Data Service",
+      "subsections": [
+        {
+          "subheading": "Service File (data.service.ts)",
+          "content": "A service that uses Subject to broadcast changes.",
+          "code": "import { Injectable } from '@angular/core';\nimport { Subject } from 'rxjs';\n\n@Injectable({ providedIn: 'root' })\nexport class DataService {\n  private userSource = new Subject<string>();\n  user$ = this.userSource.asObservable();\n\n  setUser(name: string) {\n    this.userSource.next(name);\n  }\n}"
+        },
+        {
+          "subheading": "Component File (user.component.ts)",
+          "content": "This component subscribes to shared data from the service.",
+          "code": "import { Component, OnInit } from '@angular/core';\nimport { DataService } from './data.service';\n\n@Component({\n  selector: 'app-user',\n  template: `<p>Welcome, {{ userName }}</p>`\n})\nexport class UserComponent implements OnInit {\n  userName = '';\n\n  constructor(private dataService: DataService) {}\n\n  ngOnInit() {\n    this.dataService.user$.subscribe(name => {\n      this.userName = name;\n    });\n  }\n}"
+        }
+      ]
+    }
+  ]
+},
+{
+  "title": "Observables vs Subjects in RxJS",
+  "type": "RxJS",
+  "sections": [
+    {
+      "heading": "Overview",
+      "content": "Both Observables and Subjects are part of RxJS and are used to handle asynchronous data streams. However, they differ significantly in behavior, especially in how values are emitted and consumed."
+    },
+    {
+      "heading": "Use Observables When:",
+      "content": [
+        "i) Working with **HTTP requests** using Angular's HttpClient.",
+        "ii) Handling **user events** (clicks, keystrokes).",
+        "iii) Dealing with **one-time async operations**.",
+        "iv) You want **independent execution per subscriber** (unicast)."
+      ]
+    },
+    {
+      "heading": "Use Subjects When:",
+      "content": [
+        "i) Managing **application state** (e.g., user auth, dark mode).",
+        "ii) Creating **event buses** for component communication.",
+        "iii) Implementing **caching** using BehaviorSubject or ReplaySubject.",
+        "iv) You need to **manually push values** into a stream (multicast)."
+      ]
+    },
+    {
+      "heading": "Key Differences",
+      "subsections": [
+        {
+          "subheading": "Observable Example",
+          "content": "Each subscriber gets its own independent execution.",
+          "code": "import { Observable } from 'rxjs';\n\nconst observable = new Observable(observer => {\n  observer.next(Math.random());\n});\n\nobservable.subscribe(val => console.log('Observer A:', val));\nobservable.subscribe(val => console.log('Observer B:', val));"
+        },
+        {
+          "subheading": "Subject Example",
+          "content": "Subject emits the same value to all subscribers (multicast).",
+          "code": "import { Subject } from 'rxjs';\n\nconst subject = new Subject();\n\nsubject.subscribe(val => console.log('Observer A:', val));\nsubject.subscribe(val => console.log('Observer B:', val));\n\nsubject.next(Math.random());"
+        }
+      ]
+    },
+    {
+      "heading": "API Calls: What to Use When?",
+      "subsections": [
+        {
+          "subheading": "For Single API Calls → Use Observable",
+          "content": "Observables are best for one-time data streams like HTTP calls.",
+          "code": "getUser(): Observable<User> {\n  return this.http.get<User>('https://api.com/user');\n}\n\n// Component\nthis.service.getUser().subscribe(data => console.log(data));"
+        },
+        {
+          "subheading": "For Multiple Dependent API Calls → Use Observable Operators",
+          "content": "Chaining multiple API calls using switchMap or concatMap.",
+          "code": "this.service.getUser().pipe(\n  switchMap(user => this.service.getUserPosts(user.id))\n).subscribe(posts => console.log(posts));"
+        },
+        {
+          "subheading": "For Caching API Responses → Use BehaviorSubject",
+          "content": "Useful when you want to retain and reuse the last emitted value.",
+          "code": "private userSubject = new BehaviorSubject<User | null>(null);\n\ngetUser() {\n  if (!this.userSubject.value) {\n    this.http.get<User>('https://api.com/user')\n      .subscribe(data => this.userSubject.next(data));\n  }\n  return this.userSubject.asObservable();\n}"
+        },
+        {
+          "subheading": "For Real-time Updates → Use Subject",
+          "content": "For manually pushing updates (e.g., WebSocket or timer-based updates).",
+          "code": "private notificationSubject = new Subject<string>();\n\nsendNotification(msg: string) {\n  this.notificationSubject.next(msg);\n}\n\ngetNotifications(): Observable<string> {\n  return this.notificationSubject.asObservable();\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Real-World Examples",
+      "subsections": [
+        {
+          "subheading": "When to Use Observables",
+          "content": [
+            "i) Fetching user profile on login.",
+            "ii) Submitting a form and getting a one-time response.",
+            "iii) Listening to DOM events like keyup or click."
+          ]
+        },
+        {
+          "subheading": "When to Use Subjects",
+          "content": [
+            "i) Broadcasting login status to multiple components.",
+            "ii) Switching themes globally across the app.",
+            "iii) Sharing filter state across unrelated components."
+          ]
+        }
+      ]
+    }
+  ]
+}
+,
+{
+  "title": "HttpClient",
+  "type": "Http",
+  "sections": [
+    {
+      "heading": "What is HttpClient?",
+      "content": "HttpClient is a built-in Angular service used to communicate with remote servers or REST APIs using the HTTP protocol. It provides a simplified and powerful API for making asynchronous HTTP requests and processing responses.",
+      "subsections": [
+        {
+          "subheading": "Purpose of HttpClient",
+          "content": "HttpClient allows Angular applications to perform common tasks like GET, POST, PUT, and DELETE requests, interacting with APIs in a clean and consistent way."
+       
+        }
+      ]
+    },
+    {
+      "heading": "How Angular Communicates with Servers or APIs",
+      "content": "Angular communicates with external APIs using the HttpClient service. It sends HTTP requests (like GET, POST) to backend endpoints and receives the responses asynchronously via Observables.",
+      "subsections": [
+        {
+          "subheading": "Request-Response Flow",
+          "content": "Angular components call service methods that use HttpClient. The response is an Observable, which you subscribe to in the component to receive and process the data.",
+          "code": "// Component\nthis.dataService.getUsers().subscribe(users => {\n  this.userList = users;\n});"
+        }
+      ]
+    },
+    {
+      "heading": "Setting Up HttpClient in Angular",
+      "content": "Before using HttpClient, you must import HttpClientModule in your root module (AppModule) or in any feature module.",
+      "subsections": [
+        {
+          "subheading": "Import HttpClientModule",
+          "content": "In your app.module.ts file, import HttpClientModule and include it in the imports array to make HttpClient available throughout the app.",
+          "code": "import { HttpClientModule } from '@angular/common/http';\n\n@NgModule({\n  imports: [\n    BrowserModule,\n    HttpClientModule\n  ]\n})\nexport class AppModule {}"
+        },
+        {
+          "subheading": "Inject HttpClient in a Service",
+          "content": "Use Angular’s dependency injection to inject HttpClient into a service.",
+          "code": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\n\n@Injectable({ providedIn: 'root' })\nexport class DataService {\n  constructor(private http: HttpClient) {}\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Making HTTP Requests (CRUD Operations)",
+      "content": "HttpClient provides methods to interact with REST APIs. These methods return Observables, allowing reactive programming with RxJS.",
+      "subsections": [
+        {
+          "subheading": "GET Request",
+          "content": "Used to fetch data from the server.",
+          "code": "getUsers() {\n  return this.http.get('https://api.example.com/users');\n}"
+        },
+        {
+          "subheading": "POST Request",
+          "content": "Used to send new data to the server.",
+          "code": "addUser(user: any) {\n  return this.http.post('https://api.example.com/users', user);\n}"
+        },
+        {
+          "subheading": "PUT Request",
+          "content": "Used to update existing data on the server.",
+          "code": "updateUser(id: number, user: any) {\n  return this.http.put(`https://api.example.com/users/${id}`, user);\n}"
+        },
+        {
+          "subheading": "DELETE Request",
+          "content": "Used to remove data from the server.",
+          "code": "deleteUser(id: number) {\n  return this.http.delete(`https://api.example.com/users/${id}`);\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Handling Responses with RxJS",
+      "content": "HttpClient returns Observables, and we use RxJS operators to handle asynchronous responses, errors, and side effects.",
+      "subsections": [
+        {
+          "subheading": "Subscribing to HTTP Response",
+          "content": "Subscribe to the returned Observable to consume the data in your components.",
+          "code": "this.dataService.getUsers().subscribe(\n  data => console.log(data),\n  error => console.error('Error:', error)\n);"
+        },
+        {
+          "subheading": "Using RxJS Operators",
+          "content": "Operators like map, catchError, and tap allow us to transform and manage HTTP responses effectively.",
+          "code": "getUsers() {\n  return this.http.get('https://api.example.com/users')\n    .pipe(\n      map(response => response),\n      catchError(error => {\n        console.error('Error occurred:', error);\n        return throwError(() => error);\n      })\n    );\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) HttpClient is used to perform HTTP requests and communicate with backend servers or APIs.",
+        "ii) Import HttpClientModule once in your app.module.ts or relevant feature module.",
+        "iii) All HttpClient methods return Observables that support reactive programming.",
+        "iv) RxJS operators like map, catchError, and tap help in transforming and handling data and errors.",
+        "v) Always subscribe to the Observable in the component or use the async pipe in templates."
+      ]
+    }
+  ]
+}
+,
+{
+  
+  "title": "Interceptors",
+  "type": "Http",
+  "sections": [
+    {
+      "heading": "What are Interceptors?",
+      "content": "Interceptors are a feature of Angular’s HttpClient that allow you to intercept and modify HTTP requests or responses globally before they are sent to the server or received by the application."
+      
+    },
+    {
+      "heading": "1. Basic Interceptor Structure",
+      "content": "To create an interceptor, you need to implement the HttpInterceptor interface provided by Angular.",
+      "subsections": [
+        {
+          "subheading": "Interceptor Code",
+          "content": "This is the basic structure of an Angular HTTP Interceptor.",
+          "code": "import { Injectable } from '@angular/core';\nimport { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\n@Injectable()\nexport class MyInterceptor implements HttpInterceptor {\n  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {\n    console.log('Intercepted Request:', req);\n    return next.handle(req);\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "2. Registering Interceptors",
+      "content": "After creating the interceptor, register it in your app.module.ts under providers using the HTTP_INTERCEPTORS token.",
+      "subsections": [
+        {
+          "subheading": "AppModule Configuration",
+          "content": "Use multi: true to allow multiple interceptors.",
+          "code": "import { HTTP_INTERCEPTORS } from '@angular/common/http';\nimport { MyInterceptor } from './my-interceptor';\n\n@NgModule({\n  providers: [\n    {\n      provide: HTTP_INTERCEPTORS,\n      useClass: MyInterceptor,\n      multi: true\n    }\n  ]\n})\nexport class AppModule {}"
+        }
+      ]
+    },
+    {
+      "heading": "3. Common Use Cases",
+      "content": "Interceptors are often used for modifying requests and handling global logic for HTTP traffic.",
+      "subsections": [
+        {
+          "subheading": "A. Adding Authentication Headers",
+          "content": "Attach a token to every outgoing request.",
+          "code": "intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {\n  const token = localStorage.getItem('token');\n  const authReq = req.clone({\n    setHeaders: {\n      Authorization: `Bearer ${token}`\n    }\n  });\n  return next.handle(authReq);\n}"
+        },
+        {
+          "subheading": "B. Error Handling",
+          "content": "Catch global errors like 401 Unauthorized or 500 Server Error.",
+          "code": "intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {\n  return next.handle(req).pipe(\n    catchError((error: HttpErrorResponse) => {\n      if (error.status === 401) {\n        console.error('Unauthorized');\n      }\n      return throwError(() => error);\n    })\n  );\n}"
+        }
+      ]
+    },
+    {
+      "heading": "4. Multiple Interceptors",
+      "content": "Angular supports multiple interceptors. They are executed in the order they are provided in the `providers` array.",
+      "subsections": [
+        {
+          "subheading": "Order of Execution",
+          "content": "Each interceptor processes the request and passes it to the next. On response, they handle in reverse order.",
+          "code": "providers: [\n  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },\n  { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },\n]"
+        }
+      ]
+    },
+    {
+      "heading": "When Not to Use Interceptors",
+      "content": "Avoid interceptors when you need highly contextual or per-request specific logic that shouldn't apply globally.",
+      "subsections": [
+        {
+          "subheading": "Use Cases to Avoid",
+          "content": "If you need different headers for each API call or want request-specific retry logic, prefer service-level handling instead."
+          
+        }
+      ]
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "Interceptors allow global modification of requests and responses.",
+        "They are useful for authentication, logging, and error handling.",
+        "Multiple interceptors can be chained and are executed in order.",
+        "Always register interceptors using the HTTP_INTERCEPTORS token with multi: true.",
+        "Avoid using interceptors for highly specific logic not applicable app-wide."
+      ]
+    }
+  ]
+},
+{
+  "title": "Error Handling",
+  "type": "Http",
+  "sections": [
+    {
+      "heading": "1. Basic Error Handling",
+      "content": "Angular provides powerful error handling mechanisms using RxJS operators like `catchError` in the HttpClient stream.",
+      "subsections": [
+        {
+          "subheading": "Simple Error Catch",
+          "content": "You can catch and handle errors in HTTP requests using the RxJS `catchError` operator directly in your service method.",
+          "code": "// user.service.ts\nimport { Injectable } from '@angular/core';\nimport { HttpClient, HttpErrorResponse } from '@angular/common/http';\nimport { catchError } from 'rxjs/operators';\nimport { throwError } from 'rxjs';\n\n@Injectable({ providedIn: 'root' })\nexport class UserService {\n  constructor(private http: HttpClient) {}\n\n  getUserData() {\n    return this.http.get('https://api.example.com/user')\n      .pipe(\n        catchError(this.handleError)\n      );\n  }\n\n  private handleError(error: HttpErrorResponse) {\n    if (error.error instanceof ErrorEvent) {\n      console.error('Client-side error:', error.error.message);\n    } else {\n      console.error(`Server returned code ${error.status}, body was: ${error.error}`);\n    }\n    return throwError(() => new Error('Something went wrong! Please try again later.'));\n  }\n}"
+        },
+        {
+          "subheading": "Using catchError Operator",
+          "content": "`catchError` allows us to intercept errors, log them, and return a fallback or rethrow.",
+          "code": "// in component.ts\nthis.userService.getUserData().subscribe({\n  next: data => console.log(data),\n  error: err => console.log('Handled Error:', err.message)\n});"
+        }
+      ]
+    },
+    {
+      "heading": "2. HTTP Error Types",
+      "content": "Angular uses the `HttpErrorResponse` class to return details about HTTP errors.",
+      "subsections": [
+        {
+          "subheading": "Client-side Errors",
+          "content": "These are network or browser-level errors. You can check if `error.error instanceof ErrorEvent`.",
+          "code": "if (error.error instanceof ErrorEvent) {\n  console.error('Client-side error:', error.error.message);\n}"
+        },
+        {
+          "subheading": "Server-side Errors",
+          "content": "These errors occur from the server. Check `error.status` and `error.error` to debug.",
+          "code": "else {\n  console.error(`Server returned code ${error.status}, body was:`, error.error);\n}"
+        }
+      ]
+    },
+    {
+      "heading": "3. Common HTTP Error Statuses",
+      "content": "These are some frequently encountered HTTP status codes when making API calls.",
+      "subsections": [
+        {
+          "subheading": "400 - Bad Request",
+          "content": "Occurs when request syntax is invalid or data is missing."
+        },
+        {
+          "subheading": "401 - Unauthorized",
+          "content": "Authentication is required and has failed or not been provided."
+        },
+        {
+          "subheading": "403 - Forbidden",
+          "content": "Authenticated user does not have permission to access the resource."
+        },
+        {
+          "subheading": "404 - Not Found",
+          "content": "Requested resource does not exist on the server."
+        },
+        {
+          "subheading": "500 - Internal Server Error",
+          "content": "Unexpected error occurred on the server."
+        }
+      ]
+    }
+  ]
+},
+{
+  "title": "Component Styling",
+  "type": "Styling",
+  "sections": [
+    {
+      "heading": "Component Styles (Default Approach)",
+      "content": "In Angular, each component has its own styles defined in the `styles` or `styleUrls` metadata properties. These styles are scoped to that component only.",
+      "subsections": [
+        {
+          "subheading": "Using styles in component",
+          "content": "Define inline styles in the `@Component` decorator using `styles`.",
+          "code": "@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n  styles: [`\n    h1 {\n      color: blue;\n    }\n  `]\n})\nexport class ExampleComponent {}"
+        }
+      ]
+    },
+    {
+      "heading": "External Stylesheets",
+      "content": "Instead of inline styles, you can use separate CSS files and link them using `styleUrls` in the component metadata.",
+      "subsections": [
+        {
+          "subheading": "Using external stylesheets",
+          "content": "Reference a CSS file using `styleUrls`.",
+          "code": "@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n  styleUrls: ['./example.component.css']\n})\nexport class ExampleComponent {}"
+        }
+      ]
+    },
+    {
+      "heading": "Global Styles",
+      "content": "Global styles affect the entire application and are typically declared in `src/styles.css` or `angular.json` under the `styles` array.",
+      "subsections": [
+        {
+          "subheading": "Applying global styles",
+          "content": "Define styles in `src/styles.css` or include external libraries like Bootstrap.",
+          "code": "/* styles.css */\nbody {\n  margin: 0;\n  font-family: Arial, sans-serif;\n}"
+        },
+        {
+          "subheading": "angular.json",
+          "content": "You can also link styles in the `angular.json` file.",
+          "code": "{\n  \"styles\": [\n    \"src/styles.css\",\n    \"node_modules/bootstrap/dist/css/bootstrap.min.css\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "heading": "Special Selectors",
+      "content": "Angular provides selectors like `:host`, `:host-context`, and `::ng-deep` to apply styles more dynamically.",
+      "subsections": [
+        {
+          "subheading": ":host",
+          "content": "Targets the host element of the component.",
+          "code": ":host {\n  display: block;\n  border: 1px solid black;\n}"
+        },
+        {
+          "subheading": ":host-context",
+          "content": "Applies styles based on a parent context.",
+          "code": ":host-context(.dark-theme) {\n  background-color: black;\n  color: white;\n}"
+        },
+        {
+          "subheading": "::ng-deep",
+          "content": "Used to apply styles deep into child components (deprecated in future versions).",
+          "code": "::ng-deep p {\n  color: red;\n}"
+        }
+      ]
+    },
+    
+    {
+      "heading": "CSS Preprocessors",
+      "content": "Angular supports preprocessors like SCSS, SASS, and LESS. You just need to rename your style files to the corresponding extensions and Angular CLI will compile them.",
+      "subsections": [
+        {
+          "subheading": "SCSS Support",
+          "content": "Rename `styles.css` to `styles.scss` and update Angular CLI config.",
+          "code": "ng config schematics.@schematics/angular:component.styleext scss"
+        }
+      ]
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) Angular components can have inline or external styles.",
+        "ii) Global styles are defined in `styles.css` or configured via `angular.json`.",
+        "iii) Use `:host`, `:host-context`, and `::ng-deep` for advanced styling control.",
+        "iv) NgStyle and NgClass help apply conditional styles dynamically.",
+        "v) Angular supports SCSS, SASS, and LESS out-of-the-box."
+      ]
+      
+    }
+  ]
+},
+{
+  "title": "ngClass and ngStyle",
+  "type": "Styling",
+  "sections": [
+    {
+      "heading": "ngClass Directive",
+      "content": "The `ngClass` directive in Angular is used to dynamically add or remove CSS classes to elements. It can be applied using object, array, or component property binding.",
+      "subsections": [
+        {
+          "subheading": "Object Syntax",
+          "content": "You provide an object where the keys are class names and the values are boolean expressions. If true, the class is applied.",
+          "code": "<div [ngClass]='{ 'active': isActive, 'disabled': isDisabled }'>Styled Div</div>"
+        },
+        {
+          "subheading": "Array Syntax",
+          "content": "An array of class names can be passed. Useful when classes are conditionally included.",
+          "code": "<div [ngClass]='[\"class1\", condition ? \"class2\" : \"class3\"]'>Another Div</div>"
+
+        },
+        {
+          "subheading": "Component Property",
+          "content": "Class list can be defined as a property in the component and referenced in the template.",
+          "code": "// component.ts\nclassList = { 'highlight': true, 'italic': false };\n\n// template\n<div [ngClass]=\"classList\">Dynamic Classes</div>"
+        }
+      ]
+    },
+    {
+      "heading": "ngStyle Directive",
+      "content": "`ngStyle` allows you to apply inline CSS styles dynamically. It is especially useful for conditional styling based on component logic.",
+      "subsections": [
+        {
+          "subheading": "Basic Usage",
+          "content": "Apply a single style dynamically based on a variable or expression.",
+          "code": "<div [ngStyle]='{ 'color': isError ? 'red' : 'green' }'>Styled Text</div>"
+        },
+        {
+          "subheading": "Object Syntax",
+          "content": "You can provide an object with multiple styles.",
+          "code": "<div [ngStyle]='{ 'font-size': '18px', 'margin': '10px' }'>Box</div>"
+        },
+        {
+          "subheading": "Component Property",
+          "content": "Define a style object in the component and bind it in the template.",
+          "code": "// component.ts\nboxStyle = { 'padding': '10px', 'background-color': 'lightblue' };\n\n// template\n<div [ngStyle]=\"boxStyle\">Styled with Component Data</div>"
+        }
+      ]
+    },
+    {
+      "heading": "Key Differences",
+      "content": "Although both `ngClass` and `ngStyle` are used for styling, they serve different purposes and apply different aspects of styling.",
+      "subsections": [
+        {
+          "subheading": "ngClass",
+          "content": "Used for toggling CSS classes. Works well with external or global stylesheets."
+        },
+        {
+          "subheading": "ngStyle",
+          "content": "Used for inline styling. Helps in applying specific styles directly from component logic."
+        }
+      ]
+    },
+    {
+      "heading": "Best Practices",
+      "content": "Follow these practices when using `ngClass` and `ngStyle` to keep templates clean and efficient.",
+      "subsections": [
+        {
+          "subheading": "Use `ngClass` for Reusable Styles",
+          "content": "When styling is already defined in a stylesheet or SCSS file, prefer `ngClass` to apply it dynamically."
+        },
+        {
+          "subheading": "Use `ngStyle` for Inline Tweaks",
+          "content": "For quick inline changes that are dependent on logic (like dynamic widths or colors), use `ngStyle`."
+        },
+        {
+          "subheading": "Avoid Mixing Styles Inline and External",
+          "content": "To avoid confusion and maintenance issues, try not to combine `ngStyle` and `ngClass` for the same styling purpose on the same element."
+        }
+      ]
+    },
+    {
+      "heading": "Key Points",
+      "content": [
+        "i) ngClass applies/removes classes conditionally using object, array, or property syntax.",
+        "ii) ngStyle dynamically sets inline styles based on expressions or component variables.",
+        "iii) Use ngClass for toggling reusable styles defined in stylesheets.",
+        "iv) Use ngStyle for quick, dynamic inline changes (like color, width, etc).",
+        "v) Avoid overusing ngStyle as it may override stylesheet styles and impact performance."
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+
+]

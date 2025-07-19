@@ -1,0 +1,107 @@
+.RightBar{
+    background-color: #f5f7fa;
+    width: 82vw;
+    height: 100vh;
+     display: flex;
+    flex-direction: column;
+    overflow: hidden;
+   
+}
+.RightBar .head{
+    width: 82vw;
+    height: 10vh;
+   flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.RightBar .head h5{
+    color: #6c5ce7;
+    
+}
+.RightBar .content{
+  width: 82vw;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;;
+  flex: 1;
+    overflow-y: auto; /* Allow vertical scrolling */
+    padding: 20px 0;
+    
+    scroll-behavior: smooth;
+}
+
+.RightBar .content .inside_content{
+width: 77vw;
+height: auto;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+background-color: white;
+margin-bottom: 20px;
+/* box-shadow:    
+    1px 1px 5px rgba(178, 176, 176, 0.2), 
+    -2px -2px 2px rgba(178, 176, 176, 0.2), 
+    -2px 2px 2px rgba(0,0,0,0.2),  
+  2px -2px 2px rgba(0,0,0,0.2);   */
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05)
+}
+
+.RightBar .content .inside_content .inside_con2{
+width: 74vw;
+height: auto;
+
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.RightBar .content .inside_content .inside_con2 h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #444;
+}
+.RightBar .content .inside_content .inside_con2 .section h3{
+  color: #6c5ce7;
+
+}
+.RightBar .content .inside_content .inside_con2 .section .conArr {
+  color: #636e72;
+  margin-top: 10px;
+  line-height: 1;
+}
+.RightBar .content .inside_content .inside_con2 .section .norMalpara{
+  color: #636e72;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 25px;
+}
+
+
+
+.RightBar .content .inside_content .inside_con2 .section .subsection h4 {
+  font-size: 16px;
+  color: #444;
+  margin-top: 20px;
+}
+
+.code-block {
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  overflow-x: auto;
+}
