@@ -1,5 +1,7 @@
-// features/authSlice.ts
+
 import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../app/store';
+
 
 interface User {
   id: string;
@@ -27,6 +29,7 @@ const authSlice = createSlice({
     }
   }
 });
+export const selectUser = (state: RootState) => state.auth.user;
 
 export const { setUser, logout } = authSlice.actions;
 export default authSlice.reducer;

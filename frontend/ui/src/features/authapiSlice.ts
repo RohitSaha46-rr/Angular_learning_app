@@ -25,3 +25,4 @@ export const authApiSlice = createApi({
 });
 
 export const { useLoginMutation, useSignupMutation } = authApiSlice;
+

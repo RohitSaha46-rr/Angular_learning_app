@@ -3,9 +3,14 @@ import '../styles/rightbar.css'
 
 import useContent from '../hooks/useContent';
 const RightBar :React.FC= () => {
-    const{selectedTopic,content,ref, isLoading}=useContent();
+    const{selectedTopic,content,ref, isLoading,user}=useContent();
     
-     if (!selectedTopic) return <div className="RightBar">Select a topic</div>;
+     if (!selectedTopic) return <div className="RightBar">
+      <h1>Welcome {user?.username}</h1>
+      <p>
+       Please select any Topic !
+      </p>
+      </div>;
      if (isLoading) return <div className="RightBar">Loading content...</div>;
     console.log(selectedTopic);
     console.log(content);

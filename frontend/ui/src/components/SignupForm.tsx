@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import { useSignupMutation } from '../features/authapiSlice';
 import { useAppDispatch } from '../hooks/hooks';
 import { setUser } from '../features/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 const SignupForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [signup, { isLoading }] = useSignupMutation();
   const dispatch = useAppDispatch();
+  const navigate=useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const { data } = await signup({ username, password }).unwrap();
-      localStorage.setItem('token', data.token);
-      dispatch(setUser({ id: data.id, username: data.username }));
+      const result = await signup({ username, password }).unwrap();
+      localStorage.setItem('token', result.token);
+      dispatch(setUser({ id: result.id, username: result.username }));
+      alert("Signed in successfully !")
+      navigate('/login');
     } catch (err) {
       alert('Signup failed!');
     }
