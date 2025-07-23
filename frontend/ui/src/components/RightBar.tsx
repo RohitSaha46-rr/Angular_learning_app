@@ -1,26 +1,12 @@
 import React from 'react'
 import '../styles/rightbar.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react';
-import { fetchContent } from '../features/slice';
-import { useRef } from 'react';
-const RightBar = () => {
-    const{selectedTopic,content}=useSelector((state)=>state.topics);
 
-    const dispatch=useDispatch();
-    const ref=useRef(null);
-     useEffect(()=>{
-       
-      if(selectedTopic){
-      dispatch(fetchContent(selectedTopic?.title))
-      setTimeout(()=>{
-      ref.current.scrollTo({top:0,behaviour:'smooth'});
-      },0)
-      
-      }
-    },[dispatch,selectedTopic])
+import useContent from '../hooks/useContent';
+const RightBar :React.FC= () => {
+    const{selectedTopic,content,ref, isLoading}=useContent();
     
      if (!selectedTopic) return <div className="RightBar">Select a topic</div>;
+     if (isLoading) return <div className="RightBar">Loading content...</div>;
     console.log(selectedTopic);
     console.log(content);
     
@@ -35,7 +21,7 @@ const RightBar = () => {
       <div className='inside_con2'>
         <h2>{selectedTopic.title}</h2>
        
-        {content.sections?.map((elem, index) => (
+        {content?.sections?.map((elem, index) => (
           <div key={index} className='section'>
             <h3>{elem.heading}</h3>
 
